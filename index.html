@@ -1,0 +1,2229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./data/style.css">
+    <link rel="stylesheet" href="./fontawesome-web/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.9/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.9/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.9/dist/js/uikit-icons.min.js"></script>
+    <script src="./data/app.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,400&display=swap" rel="stylesheet">
+    <title>Tienda 724</title>
+</head>
+
+<body>
+
+    <div class="web">
+        <!--Navbar-->
+        <div class="uk-flex uk-flex-between navbar-sales">
+            <div class="uk-flex uk-flex-middle">
+                <div uk-toggle="target: .menu-vertical-sales; cls: show" class="padding-horizontal-20">
+                    <img class="icon-menu-sales" src="./data/menu.png" alt="">
+                </div>
+                <div>
+                    <img src="./data/tienda724.png" class="logo-size-sales" alt="">
+                </div>
+                <div class="uk-inline">
+                    <div class="cursor-pointer uk-flex uk-flex-middle" style="margin-left: 60px;">
+                        <img class="logo-store-size-sales" src="./data/logo2.png " alt=" ">
+                        <i class="fas fa-caret-down font-size-17"></i>
+                    </div>
+                    <div uk-drop="mode: click">
+                        <div style="position: relative;">
+                            <div class="drop-store-sales">
+                                <ul class="uk-list" style="padding-bottom: 20px;">
+                                    <h6 class=" uk-margin-remove font-size-10 padding-horizontal-20" style="padding-bottom: 5px;">Tienda seleccionada:</h6>
+                                    <div class="hr-tab"></div>
+                                    <h5 class="uk-text-bold uk-margin-remove font-size-13 padding-horizontal-20" style="padding-top: 10px;">La Ferra</h5>
+                                    <div class="hr-tab"></div>
+                                    <div class="padding-horizontal-25" style="margin-top: 35px;">
+                                        <div class="uk-flex uk-flex-middle">
+                                            <h6 class="uk-margin-remove uk-text-bold font-size-12">Facturas:</h6>
+                                            <h6 class="uk-margin-remove font-size-12">1</h6>
+                                        </div>
+                                        <div class="padding-vertical-20">
+                                            <h6 class="uk-margin-remove uk-text-bold font-size-12">Tienda:</h6>
+                                            <h6 class="uk-margin-remove font-size-12">Panaderia Maria</h6>
+                                        </div>
+                                        <div class="uk-flex uk-flex-middle">
+                                            <h6 class="uk-margin-remove uk-text-bold font-size-12">Caja:</h6>
+                                            <h6 class="uk-margin-remove font-size-12">1</h6>
+                                        </div>
+                                        <div class="padding-vertical-20">
+                                            <h6 class="uk-margin-remove uk-text-bold font-size-12">Modo:</h6>
+                                            <h6 class="uk-margin-remove uk-text-bold font-size-12 color-green-minus-plus">ONLINE</h6>
+                                        </div>
+                                    </div>
+                                    <div class="hr-tab"></div>
+                                    <h6 class=" uk-margin-remove uk-text-bold font-size-12 padding-horizontal-25" style="padding-top: 7px;">Offline</h6>
+                                    <div class="hr-tab"></div>
+                                    <div style="height: 50px; padding: 0px !important; margin: 0px !important;" uk-toggle="target: #border-right-none; cls: button-border-right-none-sales">
+                                        <button id="border-right-none" uk-toggle="target: #options-box-cash" class="button-option-cash-sales">
+                                        <h6 class=" uk-margin-remove uk-text-left uk-text-bold font-size-12 padding-horizontal-25" style="width: 60px;">Opciones de caja</h6>
+                                    </button>
+                                    </div>
+                                    <div style="margin: 0px !important; padding: 0px !important;" class="hr-tab"></div>
+                                    <div uk-toggle="target: #modal-most-selled-products">
+                                        <h6 class="uk-margin-remove uk-text-bold font-size-12 padding-horizontal-25 cursor-pointer" style="padding-top: 5px;">Productos más vendidos</h6>
+                                    </div>
+                                    <div id="modal-most-selled-products" uk-modal>
+                                        <div class="uk-modal-dialog most-selled-products-sales">
+                                            <div class="uk-flex uk-flex-middle">
+                                                <i class="fas fa-times uk-modal-close cursor-pointer"></i>
+                                                <h6 class="uk-margin-remove color-red-3 uk-text-bold font-size-12 padding-horizontal-30">top 20 productos más vendidos</h6>
+                                            </div>
+                                            <div class="uk-flex uk-flex-center">
+                                                <div style="margin-top: 15px; height: 310px;">
+                                                    <div class="uk-flex uk-flex-middle padding-vertical-5">
+                                                        <h6 class="uk-margin-remove uk-text-bold font-size-12 width-275 uk-text-center">Nombre</h6>
+                                                        <h6 class="uk-margin-remove uk-text-bold font-size-12 width-275 uk-text-center">Código</h6>
+                                                    </div>
+                                                    <div class="hr-tab"></div>
+                                                    <div class="uk-flex uk-flex-middle padding-vertical-5">
+                                                        <h6 class="uk-margin-remove uk-text-light font-size-12 width-275 uk-text-center color-grey">SABRA SABRA UNIDAD</h6>
+                                                        <h6 class="uk-margin-remove uk-text-light font-size-12 width-275 uk-text-center color-grey">99999910666</h6>
+                                                    </div>
+                                                    <div class="hr-tab"></div>
+                                                </div>
+                                            </div>
+                                            <button class="uk-modal-close buttons-close-cash-sales" style="margin-left: 60px;" type="button">Volver</button>
+                                        </div>
+                                    </div>
+                                    <div class="hr-tab"></div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="options-box-cash" class="drop-option-cash-sales" hidden>
+                            <ul class="uk-flex uk-flex-middle" style="margin: 0px !important; padding: 0px !important;" uk-switcher>
+                                <div uk-toggle="target: #toggle-custom0; cls: border-bottom-sales">
+                                    <button id="toggle-custom1" class="button-movements-cash-sales uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove color-red-3 uk-text-bold font-size-12">Movimientos de caja</h6>
+                                </button>
+                                </div>
+                                <div uk-toggle="target: #toggle-custom1; cls: border-bottom-two-sales">
+                                    <button id="toggle-custom0" class="button-close-cash-sales uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove color-red-3 uk-text-bold font-size-12">Cierre de caja</h6>
+                                </button>
+                                </div>
+                            </ul>
+                            <ul class="uk-switcher uk-margin">
+                                <div>
+                                    <div style="margin-top: -10px;">
+                                        <div class="padding-horizontal-25" style="margin-bottom: 10px;">
+                                            <h6 class="uk-margin-remove font-size-12 padding-vertical-3">Selecciona una opción</h6>
+                                            <h5 class="uk-margin-remove font-weight-500 font-size-14">Ingreso</h5>
+                                        </div>
+                                        <div class="hr-tab"></div>
+                                        <div class="padding-horizontal-25" style="margin-top: 5px; margin-bottom: 5px;">
+                                            <h6 class="uk-margin-remove font-size-12 padding-vertical-3">Cantidad</h6>
+                                            <h5 class="uk-margin-remove font-weight-500 font-size-14">0$</h5>
+                                        </div>
+                                        <div class="hr-tab"></div>
+                                        <div class="padding-horizontal-25">
+                                            <h5 class="uk-margin-remove font-weight-500 font-size-14" style="padding-top: 8px; padding-bottom: 8px;">Notas</h5>
+                                        </div>
+                                        <div class="hr-tab"></div>
+                                    </div>
+                                    <div class="uk-flex uk-flex-middle uk-flex-around padding-horizontal-20" style="margin-top: 10px;">
+                                        <button class="buttons-final-drop-movement-cash-sales" style="color: black !important;">Volver</button>
+                                        <button class="buttons-final-drop-movement-cash-sales" style="color: black !important;" uk-toggle="target: #modal-movements-cash">Ver otros movimientos</button>
+                                        <div id="modal-movements-cash" uk-modal>
+                                            <div class="uk-modal-dialog modal-other-movements-sales">
+                                                <div class="uk-flex uk-flex-middle">
+                                                    <i class="fas fa-times uk-modal-close cursor-pointer"></i>
+                                                    <h6 class="uk-margin-remove color-red-3 uk-text-bold font-size-12 padding-horizontal-30">Ver otros movimientos</h6>
+                                                </div>
+                                                <div class="uk-flex uk-flex-center">
+                                                    <div style="margin-top: 15px;">
+                                                        <div class="uk-flex uk-flex-middle width-450" style="margin-bottom: 10px;">
+                                                            <h6 class="uk-margin-remove font-size-12 uk-text-center uk-text-bold width-150">Fecha</h6>
+                                                            <h6 class="uk-margin-remove font-size-12 uk-text-center uk-text-bold width-150">Tipo</h6>
+                                                            <h6 class="uk-margin-remove font-size-12 uk-text-center uk-text-bold width-150">Notas</h6>
+                                                            <h6 class="uk-margin-remove font-size-12 uk-text-center uk-text-bold width-150">Valor</h6>
+                                                        </div>
+                                                        <div class="hr-tab-list"></div>
+                                                        <div class="uk-flex uk-flex-middle width-450" style="margin-top: 10px; margin-bottom: 8px;">
+                                                            <h6 class="uk-margin-remove font-size-12 uk-text-center color-grey width-150">2020-12-03 15:14:16</h6>
+                                                            <h6 class="uk-margin-remove font-size-12 uk-text-center color-grey width-150">Debito</h6>
+                                                            <h6 class="uk-margin-remove font-size-12 uk-text-center color-grey width-150">Base inicial</h6>
+                                                            <h6 class="uk-margin-remove font-size-12 uk-text-center color-grey width-150">$0.00</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hr-tab-list"></div>
+                                                <button class="uk-modal-close button-return-sales" style="color: black !important;" type="button">Volver</button>
+                                            </div>
+                                        </div>
+                                        <button class="buttons-final-drop-movement-cash-sales" style="color: rgb(155, 155, 155);">Añadir Movimiento</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div style="margin-top: -15px;">
+                                        <div class="uk-flex uk-flex-middle uk-flex-center padding-vertical-3">
+                                            <h6 class="uk-margin-remove font-weight-500 font-size-12">Tienda:</h6>
+                                            <h6 class="uk-margin-remove font-size-12" style="padding-left: 5px;">GUIVAL</h6>
+                                        </div>
+                                        <div class="uk-flex uk-flex-middle uk-flex-center padding-vertical-3">
+                                            <h6 class="uk-margin-remove font-weight-500 font-size-12">Caja:</h6>
+                                            <h6 class="uk-margin-remove font-size-12" style="padding-left: 5px;">1</h6>
+                                        </div>
+                                        <div class="uk-flex uk-flex-middle uk-flex-center padding-vertical-3">
+                                            <h6 class="uk-margin-remove font-weight-500 font-size-12">Cajero:</h6>
+                                            <h6 class="uk-margin-remove font-size-12" style="padding-left: 5px;">Juan Botero</h6>
+                                        </div>
+                                        <div class="uk-flex uk-flex-middle uk-flex-center padding-vertical-3" style="margin-bottom: 10px;">
+                                            <h6 class="uk-margin-remove font-weight-500 font-size-12">Fecha apertura:</h6>
+                                            <h6 class="uk-margin-remove font-size-12" style="padding-left: 5px;">03/12/2020 15:14</h6>
+                                        </div>
+                                        <div class="hr-tab"></div>
+                                    </div>
+                                    <div class="uk-flex uk-flex-middle" style="margin-left: 20px; margin-top: 10px;">
+                                        <div>
+                                            <h6 class="uk-margin-remove font-size-11 font-weight-500">Cantidad en billetes</h6>
+                                            <input class="inputs-close-cash-sales" type="text" placeholder="0$">
+                                        </div>
+                                        <div style="margin-left: 30px;">
+                                            <h6 class="uk-margin-remove font-size-11 font-weight-500">Cantidad en monedas</h6>
+                                            <input class="inputs-close-cash-sales" type="text" placeholder="0$">
+                                        </div>
+                                    </div>
+                                    <div style="margin-left: 10px; margin-top: 10px;">
+                                        <button class="buttons-close-cash-sales" style="font-size: 11px !important;">Volver</button>
+                                        <button class="buttons-close-cash-sales" style="font-size: 11px !important;">Cerrar Caja</button>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-inline cursor-pointer padding-horizontal-30 uk-flex uk-flex-middle">
+                <button class="button-data-user-sales uk-flex uk-flex-middle">
+                <img class="logo-user-size-sales" src="./data/icono-de-usuario.png " alt=" ">
+                <h4 class="uk-text-bold uk-margin-remove color-red" style="padding-right: 5px;">Mireya Mopan</h4>
+                <i class="fas fa-caret-down "></i>
+            </button>
+                <div uk-drop="mode: click">
+                    <div class="uk-card uk-card-body uk-card-default uk-box-shadow-large drop-data-user-sales">
+                        <div class="padding-vertical-10">
+                            <h5 class="uk-text-bold uk-margin-remove">Roles activados:</h5>
+                            <h5 class="uk-margin-remove ">Propietario de la empresa</h5>
+                        </div>
+                        <div class="hr-tab"></div>
+                        <div class="padding-vertical-10">
+                            <h5 class="uk-text-bold uk-margin-remove ">Su documento es:</h5>
+                            <h5 class="uk-margin-remove ">CC: 55555555555001</h5>
+                        </div>
+                        <div class="hr-tab"></div>
+                        <div class="padding-vertical-10">
+                            <h5 class="uk-text-bold uk-margin-remove">Id de usuario:</h5>
+                            <h5 class="uk-margin-remove ">94518</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Menu vertical ERP-->
+        <div style="position: relative;">
+            <div class="menu-vertical-sales">
+                <ul class="uk-list" style="padding-bottom: 20px;">
+                    <div class="uk-flex uk-flex-between">
+                        <div style="margin-left: 33px;">
+                            <h4 class="uk-margin-remove color-red uk-text-bold">ERP</h4>
+                            <h4 class="uk-margin-remove color-red uk-text-bold">Dashboard</h4>
+                        </div>
+                        <div style="padding-right: 5px;">
+                            <div uk-toggle="target: .menu-vertical-sales; cls: show" style="margin-right: 10px;">
+                                <i class=" fas fa-times font-size-17 color-red cursor-pointer"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-flex uk-flex-middle cursor-pointer items-menu-vertical-sales">
+                            <img class="img-menu-vertical-size-sales" src="./data/Iconografía/Inventario.png" alt="">
+                            <h4 class="uk-margin-remove uk-text-bold font-size-12">Inventario</h4>
+                        </div>
+                        <div class="uk-flex uk-flex-middle cursor-pointer items-menu-vertical-sales">
+                            <img class="img-menu-vertical-size-sales" src="./data/Iconografía/Reportes.png" alt="">
+                            <h4 class="uk-margin-remove uk-text-bold font-size-12">Reportes</h4>
+                        </div>
+                        <div class="uk-flex uk-flex-middle cursor-pointer items-menu-vertical-sales">
+                            <img class="img-menu-vertical-size-sales" src="./data/Iconografía/Terceros.png" alt="">
+                            <h4 class="uk-margin-remove uk-text-bold font-size-12">Tercero</h4>
+                        </div>
+                        <div class="uk-flex uk-flex-middle cursor-pointer items-menu-vertical-sales">
+                            <img class="img-menu-vertical-size-sales" src="./data/Iconografía/Contabilidad.png" alt="">
+                            <h4 class="uk-margin-remove uk-text-bold font-size-12">Contabilidad</h4>
+                        </div>
+                        <div class="uk-flex uk-flex-middle cursor-pointer items-menu-vertical-sales">
+                            <img class="img-menu-vertical-size-sales" src="./data/Iconografía/Pedidos.png" alt="">
+                            <h4 class="uk-margin-remove uk-text-bold font-size-12">Pedidos</h4>
+                        </div>
+                        <div class="uk-flex uk-flex-middle cursor-pointer items-menu-vertical-sales">
+                            <img class="img-menu-vertical-size-sales" src="./data/Iconografía/Crear-producto.png" alt="">
+                            <h4 class="uk-margin-remove uk-text-bold font-size-12">Crear producto</h4>
+                        </div>
+                        <div class="uk-flex uk-flex-middle cursor-pointer items-menu-vertical-sales">
+                            <img class="img-menu-vertical-size-sales" src="./data/Iconografía/Opciones-de-caja.png" alt="">
+                            <h4 class="uk-margin-remove uk-text-bold font-size-12">Opciones de caja</h4>
+                        </div>
+                        <div class="uk-flex uk-flex-middle cursor-pointer items-menu-vertical-sales">
+                            <img class="img-menu-vertical-size-sales" src="./data/Iconografía/Domicilios.png" alt="">
+                            <h4 class="uk-margin-remove uk-text-bold font-size-12">Domicilios</h4>
+                        </div>
+                        <div class="uk-flex uk-flex-middle cursor-pointer items-menu-vertical-sales">
+                            <img class="img-menu-vertical-size-sales" src="./data/Iconografía/administracion-de-pedidos.png" alt="">
+                            <h4 class="uk-margin-remove uk-text-bold font-size-12" style="width: 100px;">Administracion de pedidos</h4>
+                        </div>
+                        <div class="uk-flex uk-flex-middle cursor-pointer items-menu-vertical-sales">
+                            <img class="img-menu-vertical-size-sales" src="./data/Iconografía/Domicilios.png" alt="">
+                            <h4 class="uk-margin-remove uk-text-bold font-size-12">Mesas</h4>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <!-- Busqueda por lista -->
+        <div style="display: inline;">
+            <!-- Contenido  -->
+            <div class="main-container-sales">
+                <!-- Subnavbar de busqueda -->
+                <div class="uk-flex uk-flex-middle uk-flex-between navbar-search-products-sales">
+                    <div style="margin-left: 50px;">
+                        <h3 class="uk-margin-remove uk-text-bold color-red-3">Ventas</h3>
+                    </div>
+                    <div class="uk-flex uk-flex-middle">
+                        <div style="margin-right: 10px;">
+                            <i class="fas fa-search" style="font-size: 15px; padding-right: 10px ; "></i>
+                        </div>
+                        <div>
+                            <form class="uk-search uk-search-medium">
+                                <input class="uk-search-input uk-text-light uk-text-left form-search-sales" type="search" placeholder="Buscador de productos">
+                            </form>
+                        </div>
+                        <div>
+                            <button class="button-search-sales uk-text-bold" style="margin-left: 15px;">Busqueda por categorías</button>
+                        </div>
+                    </div>
+                    <div class="uk-flex uk-flex-middle">
+                        <h6 class="uk-text-bold color-red-3 uk-margin-remove font-size-13 cursor-pointer">Recargar</h6>
+                    </div>
+                    <div style="margin-right: 35px;">
+                        <h6 class="uk-text-bold color-red-3 uk-margin-remove font-size-13 cursor-pointer">Cancelar</h6>
+                    </div>
+                </div>
+                <div class="uk-flex">
+                    <div class="drop-list-products-sales uk-width-3-5">
+                        <div>
+                            <h6 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-5 font-size-13">Nombre producto - código barras - código tienda</h6>
+                        </div>
+                        <div class="hr-tab-list"></div>
+                        <h6 class="uk-margin-remove uk-text-center padding-vertical-3 text-list-drop-sales">Papa golpe ranch yupi x 45gr - 7703133072533 - 770313307253345461</h6>
+                        <div class="hr-tab-list"></div>
+                        <h6 class="uk-margin-remove uk-text-center padding-vertical-3 text-list-drop-sales">Papa golpe ranch yupi x 45gr - 7703133072533 - 770313307253345461</h6>
+                        <div class="hr-tab-list"></div>
+                        <h6 class="uk-margin-remove uk-text-center padding-vertical-3 text-list-drop-sales">Papa golpe ranch yupi x 45gr - 7703133072533 - 770313307253345461</h6>
+                        <div class="hr-tab-list"></div>
+                        <h6 class="uk-margin-remove uk-text-center padding-vertical-3 text-list-drop-sales">Papa golpe ranch yupi x 45gr - 7703133072533 - 770313307253345461</h6>
+                        <div class="hr-tab-list"></div>
+                        <h6 class="uk-margin-remove uk-text-center padding-vertical-3 text-list-drop-sales">Papa golpe ranch yupi x 45gr - 7703133072533 - 770313307253345461</h6>
+                        <div class="hr-tab-list"></div>
+                        <h6 class="uk-margin-remove uk-text-center padding-vertical-3 text-list-drop-sales">Papa golpe ranch yupi x 45gr - 7703133072533 - 770313307253345461</h6>
+                        <div class="hr-tab-list"></div>
+                        <h6 class="uk-margin-remove uk-text-center padding-vertical-3 text-list-drop-sales">Papa golpe ranch yupi x 45gr - 7703133072533 - 770313307253345461</h6>
+                        <div class="hr-tab-list"></div>
+                        <h6 class="uk-margin-remove uk-text-center padding-vertical-3 text-list-drop-sales">Papa golpe ranch yupi x 45gr - 7703133072533 - 770313307253345461</h6>
+                        <div class="hr-tab-list"></div>
+                        <h6 class="uk-margin-remove uk-text-center padding-vertical-3 text-list-drop-sales">Papa golpe ranch yupi x 45gr - 7703133072533 - 770313307253345461</h6>
+                        <div class="hr-tab-list"></div>
+                        <h6 class="uk-margin-remove uk-text-center padding-vertical-3 text-list-drop-sales">Papa golpe ranch yupi x 45gr - 7703133072533 - 770313307253345461</h6>
+                    </div>
+                    <div class="uk-width-2-5">
+                        <div class="uk-flex uk-flex-center">
+                            <div class="uk-text-center" style="margin-right: 70px;">
+                                <div>
+                                    <h3 class="uk-margin-remove uk-text-bold">Total</h3>
+                                </div>
+                                <div class="uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove uk-text-bold">Subtotal</h6>
+                                    <h6 class="uk-margin-remove uk-text-bold">$9,350</h6>
+                                </div>
+                            </div>
+                            <div class="uk-text-center">
+                                <div>
+                                    <h3 class="uk-margin-remove uk-text-bold">$9,900</h3>
+                                </div>
+                                <div class="uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove uk-text-bold">Impuesto</h6>
+                                    <h6 class="uk-margin-remove uk-text-bold">$500</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-left: 80px; margin-top: 15px;">
+                            <div class="select-seller-sales">
+                                <select>
+                                <option>Sin vendedor</option>
+                                <option>opción 1</option>
+                                <option>opción 2</option>
+                                <option>opción 3</option>
+                                <option>opción 4</option>
+                            </select>
+                                <div class="select_arrow-seller-sales">
+                                </div>
+                            </div>
+                            <div>
+                                <h6 class="uk-margin-remove uk-text-muted font-size-12 cursor-pointer">Operaciones de confirmación</h6>
+                            </div>
+                        </div>
+                        <div class="uk-flex uk-flex-center" style="margin-top: 15px;">
+                            <div>
+                                <div class="uk-flex uk-flex-middle" style="margin-bottom: 5px;">
+                                    <!-- Transacción manual agregar pago -->
+                                    <button class="buttons-total-sales uk-text-bold" uk-toggle="target: #manual-billing-add-pay" style="color: #34B38C !important;">Manual</button>
+                                    <!-- Transacción manual add pago -->
+                                    <div id="manual-billing-add-pay" uk-modal>
+                                        <div class="uk-modal-dialog modal-manual-billing-sales">
+                                            <div class="padding-horizontal-30  box-shadow-down-sales" style="padding-top: 10px;">
+                                                <h4 class="uk-margin-remove color-red uk-text-bold padding-vertical-10">Transacción Manual</h4>
+                                                <div class="uk-flex uk-flex-middle">
+                                                    <div style="margin-right: 20px;">
+                                                        <h6 class="uk-margin-remove uk-text-light font-size-13">Tipo de cliente:</h6>
+                                                    </div>
+                                                    <div class="select-clients-sales">
+                                                        <select>
+                                                        <option>Cliente específico</option>
+                                                        <option>Cliente casual</option>
+                                                    </select>
+                                                        <div class="select_arrow-clients-sales">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="uk-flex">
+                                                    <div style="margin-bottom: 3px;">
+                                                        <div class="uk-flex uk-flex-middle padding-vertical-10">
+                                                            <div>
+                                                                <h6 class="uk-margin-remove font-size-11 color-grey">Cédula del cliente:</h6>
+                                                            </div>
+                                                            <div>
+                                                                <input class="inputs-manual-billing-sales" style="margin-left: 10px; margin-right: 10px;" type="text">
+                                                            </div>
+                                                            <div>
+                                                                <button class="buttons-close-cash-sales" style="font-size: 10px; height: 23px !important; width: 55px; color: rgb(7, 7, 126) !important;">Buscar</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="uk-flex uk-flex-middle" style="margin-top: 25px;">
+                                                            <div style="margin-right: 40px;">
+                                                                <h6 class="uk-margin-remove uk-text-bold">Subtotal</h6>
+                                                                <h6 class="uk-margin-remove font-size-11 color-grey">Porcentaje descuento</h6>
+                                                                <input class="inputs-manual-billing-sales" type="text">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="uk-margin-remove uk-text-bold">$9,267</h6>
+                                                                <h6 class="uk-margin-remove font-size-11 color-grey">Valor descuento</h6>
+                                                                <input class="inputs-manual-billing-sales" type="text">
+                                                            </div>
+                                                        </div>
+                                                        <div class="uk-flex uk-flex-middle padding-vertical-10">
+                                                            <div style="margin-right: 10px; margin-top: 10px; margin-bottom: 10px;">
+                                                                <h6 class="uk-margin-remove uk-text-light font-size-13">Método de pago:</h6>
+                                                            </div>
+                                                            <div class="select-cash-sales">
+                                                                <select>
+                                                                    <option>Efectivo</option>
+                                                                    <option>Tarjeta débito</option>
+                                                                    <option>Tarjeta crédito</option>
+                                                            </select>
+                                                                <div class="select_arrow-cash-sales">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div style="margin-left: 50px; margin-top: 13px;">
+                                                        <h5 class="uk-margin-remove uk-text-bold">LUIS CARLOS MOLANO</h5>
+                                                        <div class="uk-flex" style=" margin-top: 32px;">
+                                                            <h4 class="uk-margin-remove uk-text-bold">Total</h4>
+                                                            <h6 class="uk-margin-remove font-size-11 color-grey padding-horizontal-5" style="padding-top: 11px;">Con descuento</h6>
+                                                        </div>
+                                                        <h3 class="uk-margin-remove uk-text-bold">$8,800</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- pago en efectivo -->
+                                            <div style="display: none;">
+                                                <div style="margin-top: 20px;">
+                                                    <div style="margin-left:30px ;">
+                                                        <img class="image-bill-icons-sales" src="./data/money/anverso-1000.png" alt="">
+                                                        <img class="image-bill-icons-sales" src="./data/money/anverso2000.jpg" alt="">
+                                                        <img class="image-bill-icons-sales" src="./data/money/anverso5000.png" alt="">
+                                                        <img class="image-bill-icons-sales" src="./data/money/anverso10000.jpg" alt="">
+                                                        <img class="image-bill-icons-sales" src="./data/money/anverso20000.png" alt="">
+                                                        <img class="image-bill-icons-sales" src="./data/money/anverso50000.png" alt="">
+                                                    </div>
+                                                    <div style="margin-left:30px ;">
+                                                        <img class="image-coin-icons-sales" src="./data/money/50.png" alt="">
+                                                        <img class="image-coin-icons-sales" src="./data/money/100.png" alt="">
+                                                        <img class="image-coin-icons-sales" style="height: 52px; width:52px ;" src="./data/money/200.png" alt="">
+                                                        <img class="image-coin-icons-sales" style="height: 50px; width:50px ;" src="./data/money/500.png" alt="">
+                                                        <img class="image-coin-icons-sales" style="height: 54px; width:54px ;" src="./data/money/1000.png" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="uk-flex uk-flex-middle uk-flex-between padding-horizontal-30" style="margin-top: 10px;">
+                                                    <div class="uk-flex uk-flex-middle">
+                                                        <h6 class="uk-margin-remove uk-text-light font-size-13">Cantidad recibida:</h6>
+                                                        <h4 class="uk-margin-remove uk-text-bold padding-horizontal-5">$0</h4>
+                                                    </div>
+                                                    <div class="uk-flex uk-flex-middle">
+                                                        <h6 class="uk-margin-remove uk-text-light font-size-13">Cambio:</h6>
+                                                        <h4 class="uk-margin-remove uk-text-bold padding-horizontal-5">$0</h4>
+                                                    </div>
+                                                    <div>
+                                                        <button class="buttons-close-cash-sales" style="width: 120px;">Limpiar recibido</button>
+                                                    </div>
+                                                </div>
+                                                <div class="padding-horizontal-30" style="margin-top: 20px;">
+                                                    <h6 class="uk-margin-remove font-size-11 color-grey">Agregar observaciones</h6>
+                                                    <input class="inputs-manual-billing-sales" style="width: 100%;" type="text">
+                                                </div>
+                                                <div class="uk-position-bottom-right" style="margin-bottom: 20px;  margin-right: 30px;">
+                                                    <button class="buttons-close-cash-sales uk-modal-close" type="button">Cancelar</button>
+                                                    <!-- Boton Completar pago -->
+                                                    <div style="display: none;">
+                                                        <button class="buttons-close-cash-sales" style="color: grey !important" type="button">Completar pago</button>
+                                                    </div>
+                                                    <!-- Boton agregar pago -->
+                                                    <div style="display: inline;">
+                                                        <button class="buttons-close-cash-sales" type="button" uk-toggle="target: #modal-example">Agregar pago</button>
+                                                    </div>
+                                                    <div id="modal-example" uk-modal>
+                                                        <div class="uk-modal-dialog modal-alert-partial-payment-sales">
+                                                            <div class="uk-flex uk-flex-center">
+                                                                <h6 class="uk-margin-remove uk-text-center width-150 uk-text-bold">Está a punto de hacer un pago parcial</h6>
+                                                            </div>
+                                                            <div class="uk-flex uk-flex-center padding-vertical-10">
+                                                                <div>
+                                                                    <button class="buttons-modal-alert-partial-payment-sales" type="button" uk-toggle="target: #manual-billing-add-pay">Cancelar</button>
+                                                                    <button class="buttons-modal-alert-partial-payment-sales" style="margin-left: 10px; background-color: rgb(185, 33, 33); color: white;" type="button">Confirmar</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Agregar tarjeta debito/credito -->
+                                            <div style="display: none;">
+                                                <div style="margin-top: 20px; margin-left: 30px;">
+                                                    <div style="margin-bottom: 20px;">
+                                                        <h6 class="uk-margin-remove uk-text-bold" style="padding-bottom: 10px;">Inscripción de tarjeta Master Card</h6>
+                                                        <h6 class="uk-margin-remove uk-text-muted font-size-12">INFORMACIÓN DE FACTURACIÓN</h6>
+                                                        <h6 class="uk-margin-remove uk-text-muted font-size-12">No se te hará ningún cargo hasta que realices una compra.</h6>
+                                                    </div>
+                                                    <div class="uk-flex uk-flex-middle" style="margin-bottom: 10px;">
+                                                        <div class="uk-flex uk-flex-middle">
+                                                            <h6 class="uk-margin-remove font-size-12">Nombre:</h6>
+                                                            <input class="inputs-register-debit-card-sales uk-text-center" type="text" placeholder="Nombre en la tarjeta">
+                                                        </div>
+                                                        <div class="uk-flex uk-flex-middle" style="margin-left: 25px;">
+                                                            <h6 class="uk-margin-remove font-size-12">Numero de tarjeta:</h6>
+                                                            <input class="inputs-register-debit-card-sales uk-text-center" style="width: 80px;" type="text" placeholder="--">
+                                                        </div>
+                                                    </div>
+                                                    <div class="uk-flex uk-flex-middle" style="margin-bottom: 10px;">
+                                                        <div class="uk-flex uk-flex-middle">
+                                                            <h6 class="uk-margin-remove font-size-12">Tipo:</h6>
+                                                            <div class="uk-flex uk-flex-middle inputs-register-debit-card-sales" style="width: 50px; padding-left: 15px;">
+                                                                <h6 class="uk-margin-remove font-size-11 color-grey">CC</h6>
+                                                                <i class="fas fa-caret-down color-grey" style="padding-left: 10px;"></i>
+                                                            </div>
+                                                            <input class="inputs-register-debit-card-sales uk-text-center" style="width: 160px;" type="text" placeholder="Número de documento">
+                                                        </div>
+                                                        <div class="uk-flex uk-flex-middle" style="margin-left: 25px;">
+                                                            <h6 class="uk-margin-remove font-size-12">Caduca el:</h6>
+                                                            <input class="inputs-register-debit-card-sales uk-text-center" style="width: 80px;" type="text" placeholder="MM/AAAA">
+                                                        </div>
+                                                    </div>
+                                                    <div class="uk-flex uk-flex-middle">
+                                                        <h6 class="uk-margin-remove font-size-12">CVV:</h6>
+                                                        <input class="inputs-register-debit-card-sales uk-text-center" style="width: 80px;" type="text" placeholder="ccv">
+                                                    </div>
+                                                    <div class="uk-position-bottom-right">
+                                                        <button class="buttons-modal-alert-partial-payment-sales uk-text-bold uk-modal-close" style="font-size: 11px; height: 25px; width: 100px; margin-bottom: 25px; margin-right: 15px;">Cancelar</button>
+                                                        <button class="buttons-modal-alert-partial-payment-sales font-weight-500" style="font-size: 11px; height: 25px; width: 100px; margin-bottom: 20px; margin-right: 25px; background-color: rgb(185, 33, 33); color: white;">Guardar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Mostrando los datos introducirdos y los botones de pago parcial y pago completo. -->
+                                            <div style="display: inline;">
+                                                <div style="padding-left: 30px; padding-top: 20px; padding-right: 30px;">
+                                                    <div>
+                                                        <h6 class="uk-margin-remove uk-text-bold">Tarjea de débito/crédito</h6>
+                                                    </div>
+                                                    <div class="uk-flex uk-flex-middle">
+                                                        <img class="image-debit-card-sales" src="./data/master-card.png" alt="">
+                                                        <h6 class="uk-margin-remove">MASTERCARD--xxxx</h6>
+                                                    </div>
+                                                    <div style="margin-top: 20px;">
+                                                        <h6 class="uk-margin-remove font-size-11 color-grey">Agregar observaciones</h6>
+                                                        <input class="inputs-manual-billing-sales" style="width: 100%;" type="text">
+                                                    </div>
+                                                    <div class="uk-position-bottom-right uk-flex" style="margin-right: 20px; margin-bottom: 20px;">
+                                                        <div style="padding-top: 41px; margin-right: 15px;">
+                                                            <button class="buttons-options-payments-sales uk-modal-close">Cancelar</button>
+                                                        </div>
+                                                        <div class="uk-flex uk-flex-column">
+                                                            <button class="buttons-options-payments-sales" style="margin-bottom: 10px; color: #34B38C !important;">Pago parcial</button>
+                                                            <button class="buttons-options-payments-sales" style="color: #69B334 !important;">Pago completo</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="buttons-total-sales uk-text-bold" style="margin-left: 5px; color: #34B351 !important;">Rápida con factura</button>
+                                </div>
+                                <div class="uk-flex uk-flex-center">
+                                    <button class="buttons-total-sales" style="color: #69B334 !important; font-weight: 800;">Rápida</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar-product-select-sales">
+                    <div class="uk-flex uk-flex-around">
+                        <div class="width-400">
+                            <h6 class="uk-margin-remove uk-text-bold uk-text-center font-size-12">Código</h6>
+                        </div>
+                        <div class="width-400">
+                            <h6 class="uk-margin-remove uk-text-bold uk-text-center font-size-12">Producto</h6>
+                        </div>
+                        <div class="width-400">
+                            <h6 class="uk-margin-remove uk-text-bold uk-text-center font-size-12">Cantidad</h6>
+                        </div>
+                        <div class="width-400">
+                            <h6 class="uk-margin-remove uk-text-bold uk-text-center font-size-12">Valor unitario</h6>
+                        </div>
+                        <div class="width-400">
+                            <h6 class="uk-margin-remove uk-text-bold uk-text-center font-size-12">Impuesto</h6>
+                        </div>
+                        <div class="width-400">
+                            <h6 class="uk-margin-remove uk-text-bold uk-text-center font-size-12">Total</h6>
+                        </div>
+                    </div>
+                    <div class="uk-flex uk-flex-around padding-vertical-10">
+                        <div class="width-400">
+                            <h6 class="uk-margin-remove uk-text-center color-grey font-size-12" style="padding-top: 5px;">7703133086479</h6>
+                        </div>
+                        <div class="width-400">
+                            <h6 class="uk-margin-remove uk-text-center color-grey font-size-12" style="padding-top: 5px;">Rizadas pollo x36gr</h6>
+                        </div>
+                        <div class="width-400">
+                            <div class="uk-flex uk-flex-middle uk-flex-center" style="margin-top: 5px;">
+                                <i class="fas fa-minus font-size-10 color-green-minus-plus cursor-pointer"></i>
+                                <h6 class="uk-margin-remove padding-horizontal-10 color-green-minus-plus uk-text-bold font-size-12">1</h6>
+                                <i class="fas fa-plus font-size-10 color-green-minus-plus cursor-pointer"></i>
+                            </div>
+                            <div>
+                                <h6 class="uk-margin-remove uk-text-center font-size-11 uk-text-muted">Quitar</h6>
+                            </div>
+                        </div>
+                        <div class="width-400">
+                            <h6 class="uk-margin-remove uk-text-center color-grey font-size-12" style="padding-top: 5px;">General - $1.500</h6>
+                        </div>
+                        <div class="width-400">
+                            <h6 class="uk-margin-remove uk-text-center color-grey font-size-12" style="padding-top: 5px;">0%</h6>
+                        </div>
+                        <div class="width-400">
+                            <h6 class="uk-margin-remove uk-text-center color-grey font-size-12" style="padding-top: 5px;">$1.500</h6>
+                        </div>
+                    </div>
+                    <div class="hr-tab-list"></div>
+                    <div class="uk-flex uk-flex-around padding-vertical-10">
+                        <div class="width-400">
+                            <h6 class="uk-margin-remove uk-text-center color-grey font-size-12" style="padding-top: 5px;">7703133086479</h6>
+                        </div>
+                        <div class="width-400">
+                            <h6 class="uk-margin-remove uk-text-center color-grey font-size-12" style="padding-top: 5px;">Rizadas pollo x36gr</h6>
+                        </div>
+                        <div class="width-400">
+                            <div class="uk-flex uk-flex-middle uk-flex-center" style="margin-top: 5px;">
+                                <i class="fas fa-minus font-size-10 color-green-minus-plus cursor-pointer"></i>
+                                <h6 class="uk-margin-remove padding-horizontal-10 color-green-minus-plus uk-text-bold font-size-12">1</h6>
+                                <i class="fas fa-plus font-size-10 color-green-minus-plus cursor-pointer"></i>
+                            </div>
+                            <div>
+                                <h6 class="uk-margin-remove uk-text-center font-size-11 uk-text-muted">Quitar</h6>
+                            </div>
+                        </div>
+                        <div class="width-400">
+                            <h6 class="uk-margin-remove uk-text-center color-grey font-size-12" style="padding-top: 5px;">General - $1.500</h6>
+                        </div>
+                        <div class="width-400">
+                            <h6 class="uk-margin-remove uk-text-center color-grey font-size-12" style="padding-top: 5px;">0%</h6>
+                        </div>
+                        <div class="width-400">
+                            <h6 class="uk-margin-remove uk-text-center color-grey font-size-12" style="padding-top: 5px;">$1.500</h6>
+                        </div>
+                    </div>
+                    <div class="hr-tab-list"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Busqueda por categorías -->
+        <div style="display: none;">
+            <div class="main-container-sales">
+                <!-- Subnavbar de busqueda -->
+                <div class="uk-flex uk-flex-middle uk-flex-between subnavbar-search-products-sales">
+                    <div class="uk-flex uk-flex-middle">
+                        <div style=" margin-left: 35px; ">
+                            <h3 class="uk-margin-remove uk-text-bold color-red-3 ">Ventas</h3>
+                        </div>
+                        <div class="uk-flex uk-flex-middle ">
+                            <div class="padding-horizontal-30" style="margin-left:30px ;">
+                                <form class="uk-search uk-search-medium ">
+                                    <input class="uk-search-input uk-text-light uk-text-left form-search-sales " type="search " placeholder="Busqueda por nombre o código">
+                                </form>
+                            </div>
+                            <div style="margin-right: 10px; ">
+                                <i class="fas fa-search " style="font-size: 15px; padding-right: 10px ; "></i>
+                            </div>
+                            <div>
+                                <button class="button-search-sales uk-text-bold " style="margin-left: 15px; ">Busqueda por lista</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="padding-horizontal-10 " style="position: relative; margin-right: 15px; " href=" ">
+                            <img class="img-size-bag-sales " src="./data/Canasta-inactivo.png " alt=" " style="width: 50px;" uk-img>
+                            <h6 class="text-img-bag-navbar-sales uk-text-bold font-size-12 " style="position: absolute; ">0</h6>
+                        </a>
+                    </div>
+                </div>
+                <!-- menu categorias vertical -->
+                <div class="menu-categories-sales" style="margin-top: 60px;">
+                    <ul class="uk-list">
+                        <div class="uk-inline">
+                            <button class="button-items-menu-sales">
+                                <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-08.png); " uk-img></div>
+                                <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Comida</h6>
+                            </button>
+                            <div uk-drop="pos: right-center " class="categories-menu-vertical-sales ">
+                                <div class="uk-card uk-card-body uk-card-default box-categories-menu-vertical-sales uk-flex uk-flex-middle ">
+                                    <div class="uk-inline ">
+                                        <button class="button-items-menu-categories-sales uk-margin-remove ">
+                                            <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-08.png); " uk-img></div>
+                                            <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Hamburguesas</h6>
+                                        </button>
+                                        <div uk-drop class="subcategories-menu-vertical-sales ">
+                                            <div class="box-subcategories-menu-vertical-sales ">
+                                                <button class="button-items-menu-categories-sales uk-margin-remove ">
+                                                    <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-15.png); " uk-img></div>
+                                                    <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Vegetarianas</h6>
+                                                </button>
+                                                <button class="button-items-menu-categories-sales uk-margin-remove ">
+                                                    <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-15.png); " uk-img></div>
+                                                    <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Carnes</h6>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="uk-inline ">
+                                        <button class="button-items-menu-categories-sales uk-margin-remove ">
+                                            <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-15.png); " uk-img></div>
+                                            <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Pizzas</h6>
+                                        </button>
+                                        <div uk-drop class="subcategories-menu-vertical-sales ">
+                                            <div class="box-subcategories-menu-vertical-sales ">
+                                                <button class="button-items-menu-categories-sales uk-margin-remove ">
+                                                    <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-15.png); " uk-img></div>
+                                                    <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Vegetarianas</h6>
+                                                </button>
+                                                <button class="button-items-menu-categories-sales uk-margin-remove ">
+                                                    <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-15.png); " uk-img></div>
+                                                    <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Carnes</h6>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="button-items-menu-categories-sales uk-margin-remove ">
+                                        <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-16.png); " uk-img></div>
+                                        <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Emparedados</h6>
+                                    </button>
+                                    <button class="button-items-menu-categories-sales uk-margin-remove ">
+                                        <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-17.png); " uk-img></div>
+                                        <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Perros</h6>
+                                    </button>
+                                    <button class="button-items-menu-categories-sales uk-margin-remove ">
+                                        <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-18.png); " uk-img></div>
+                                        <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Bebidas</h6>
+                                    </button>
+                                    <button class="button-items-menu-categories-sales uk-margin-remove ">
+                                        <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-19.png); " uk-img></div>
+                                        <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Postres</h6>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-inline ">
+                            <button class="button-items-menu-sales uk-margin-remove ">
+                                <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-09.png); " uk-img></div>
+                                <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Accesorios</h6>
+                            </button>
+                            <div uk-drop="pos: right-center " class="categories-menu-vertical-sales ">
+                                <div class="uk-card uk-card-body uk-card-default box-categories-menu-vertical-sales uk-flex uk-flex-middle ">
+                                    <div class="uk-inline ">
+                                        <button class="button-items-menu-categories-sales uk-margin-remove ">
+                                            <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-08.png); " uk-img></div>
+                                            <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Hmaburguesas</h6>
+                                        </button>
+                                        <div uk-drop class="subcategories-menu-vertical-sales ">
+                                            <div class="box-subcategories-menu-vertical-sales ">
+                                                <button class="button-items-menu-categories-sales uk-margin-remove ">
+                                                    <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-15.png); " uk-img></div>
+                                                    <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Vegetarianas</h6>
+                                                </button>
+                                                <button class="button-items-menu-categories-sales uk-margin-remove ">
+                                                    <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-15.png); " uk-img></div>
+                                                    <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Carnes</h6>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="uk-inline ">
+                                        <button class="button-items-menu-categories-sales uk-margin-remove ">
+                                            <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-15.png); " uk-img></div>
+                                            <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Pizzas</h6>
+                                        </button>
+                                        <div uk-drop class="subcategories-menu-vertical-sales ">
+                                            <div class="box-subcategories-menu-vertical-sales ">
+                                                <button class="button-items-menu-categories-sales uk-margin-remove ">
+                                                    <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-15.png); " uk-img></div>
+                                                    <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Vegetarianas</h6>
+                                                </button>
+                                                <button class="button-items-menu-categories-sales uk-margin-remove ">
+                                                    <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-15.png); " uk-img></div>
+                                                    <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Carnes</h6>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="button-items-menu-categories-sales uk-margin-remove ">
+                                        <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-16.png); " uk-img></div>
+                                        <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Emparedados</h6>
+                                    </button>
+                                    <button class="button-items-menu-categories-sales uk-margin-remove ">
+                                        <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-17.png); " uk-img></div>
+                                        <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Perros</h6>
+                                    </button>
+                                    <button class="button-items-menu-categories-sales uk-margin-remove ">
+                                        <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-18.png); " uk-img></div>
+                                        <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Bebidas</h6>
+                                    </button>
+                                    <button class="button-items-menu-categories-sales uk-margin-remove ">
+                                        <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-19.png); " uk-img></div>
+                                        <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Postres</h6>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="button-items-menu-sales uk-margin-remove ">
+                        <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-10.png); " uk-img></div>
+                        <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Aceites</h6>
+                    </button>
+                        <button class="button-items-menu-sales uk-margin-remove ">
+                        <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-11.png); " uk-img></div>
+                        <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Bicicletas</h6>
+                    </button>
+                        <button class="button-items-menu-sales uk-margin-remove ">
+                        <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-12.png); " uk-img></div>
+                        <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Motores</h6>
+                    </button>
+                        <button class="button-items-menu-sales uk-margin-remove ">
+                        <div class="img-items-menu-scroll-sales uk-align-center uk-margin-remove-bottom " style="background-image: url(./data/1-14.png); " uk-img></div>
+                        <h6 class="uk-margin-remove uk-text-bold " style="font-size: 11px; ">Accesorios de motocicletas</h6>
+                    </button>
+                    </ul>
+                </div>
+                <!-- Contenido -->
+                <div class="uk-flex">
+                    <div class="main-container-products-selection-sales uk-flex uk-flex-wrap" style="position: relative;">
+                        <div class="uk-card uk-card-default uk-card-body card-products-add-sales uk-flex" style="position: relative; margin-right: 80px;">
+                            <div class="uk-width-1-2" style="padding-top: 8px;">
+                                <div class="img-items-products-add-70-sales" style="background-image: url(./data/burguer.png);" uk-img></div>
+                                <h5 class="uk-margin-remove font-size-12 uk-text-muted" style="padding-top: 5px; padding-left: 13px;">15.000$</h5>
+                            </div>
+                            <h6 class="button-discount-card-sales" style="position: absolute;">-25%</h6>
+                            <div class="uk-width-1-2 uk-text-center">
+                                <h6 class="uk-margin-remove font-size-12 color-red-two uk-text-bold">Hamburguesa 1</h6>
+                                <div style="margin-top: 15px;">
+                                    <h6 class="uk-margin-remove font-size-11">7703133086479</h6>
+                                    <div class="uk-flex uk-flex-middle uk-flex-center">
+                                        <h6 class="uk-margin-remove font-size-9">Impuesto:</h6>
+                                        <h6 class="uk-margin-remove font-size-9" style="padding-left: 10px;">0%</h6>
+                                    </div>
+                                </div>
+                                <button class="button-card-add-product-sales font-size-10 uk-text-bold cursor-pointer">Agregar</BUtton>
+                                <div uk-toggle="target: .like-actives3">
+                                    <img class="like-size-card-sales like-actives3" src="./data/Like-desactivado.png" style="position: absolute;" alt="">
+                                    <img class="like-size-card-sales like-actives3" src="./data/Like-activado.png" style="position: absolute;" alt="" hidden>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-card uk-card-default uk-card-body card-products-add-sales uk-flex" style="position: relative; margin-right: 80px;">
+                            <div class="uk-width-1-2" style="padding-top: 8px;">
+                                <div class="img-items-products-add-70-sales" style="background-image: url(./data/burguer.png);" uk-img></div>
+                                <h5 class="uk-margin-remove font-size-12 uk-text-muted" style="padding-top: 5px; padding-left: 13px;">15.000$</h5>
+                            </div>
+                            <h6 class="button-discount-card-sales" style="position: absolute;">-25%</h6>
+                            <div class="uk-width-1-2 uk-text-center">
+                                <h6 class="uk-margin-remove font-size-12 color-red-two uk-text-bold">Hamburguesa 1</h6>
+                                <div style="margin-top: 15px;">
+                                    <h6 class="uk-margin-remove font-size-11">7703133086479</h6>
+                                    <div class="uk-flex uk-flex-middle uk-flex-center">
+                                        <h6 class="uk-margin-remove font-size-9">Impuesto:</h6>
+                                        <h6 class="uk-margin-remove font-size-9" style="padding-left: 10px;">0%</h6>
+                                    </div>
+                                </div>
+                                <button class="button-card-add-product-sales font-size-10 uk-text-bold cursor-pointer">Agregar</BUtton>
+                                <div uk-toggle="target: .like-actives4">
+                                    <img class="like-size-card-sales like-actives4" src="./data/Like-desactivado.png" style="position: absolute;" alt="">
+                                    <img class="like-size-card-sales like-actives4" src="./data/Like-activado.png" style="position: absolute;" alt="" hidden>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-card uk-card-default uk-card-body card-products-add-sales uk-flex" style="position: relative;">
+                            <div class="uk-width-1-2" style="padding-top: 8px;">
+                                <div class="img-items-products-add-70-sales" style="background-image: url(./data/burguer.png);" uk-img></div>
+                                <h5 class="uk-margin-remove font-size-12 uk-text-muted" style="padding-top: 5px; padding-left: 13px;">15.000$</h5>
+                            </div>
+                            <h6 class="button-discount-card-sales" style="position: absolute;">-25%</h6>
+                            <div class="uk-width-1-2 uk-text-center">
+                                <h6 class="uk-margin-remove font-size-12 color-red-two uk-text-bold">Hamburguesa 1</h6>
+                                <div style="margin-top: 15px;">
+                                    <h6 class="uk-margin-remove font-size-11">7703133086479</h6>
+                                    <div class="uk-flex uk-flex-middle uk-flex-center">
+                                        <h6 class="uk-margin-remove font-size-9">Impuesto:</h6>
+                                        <h6 class="uk-margin-remove font-size-9" style="padding-left: 10px;">0%</h6>
+                                    </div>
+                                </div>
+                                <button class="button-card-add-product-sales font-size-10 uk-text-bold cursor-pointer">Agregar</BUtton>
+                                <div uk-toggle="target: .like-actives5">
+                                    <img class="like-size-card-sales like-actives5" src="./data/Like-desactivado.png" style="position: absolute;" alt="">
+                                    <img class="like-size-card-sales like-actives5" src="./data/Like-activado.png" style="position: absolute;" alt="" hidden>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-card uk-card-default uk-card-body card-products-add-sales uk-flex" style="position: relative; margin-right: 80px;">
+                            <div class="uk-width-1-2" style="padding-top: 8px;">
+                                <div class="img-items-products-add-70-sales" style="background-image: url(./data/burguer.png);" uk-img></div>
+                                <h5 class="uk-margin-remove font-size-12 uk-text-muted" style="padding-top: 5px; padding-left: 13px;">15.000$</h5>
+                            </div>
+                            <h6 class="button-discount-card-sales" style="position: absolute;">-25%</h6>
+                            <div class="uk-width-1-2 uk-text-center">
+                                <h6 class="uk-margin-remove font-size-12 color-red-two uk-text-bold">Hamburguesa 1</h6>
+                                <div style="margin-top: 15px;">
+                                    <h6 class="uk-margin-remove font-size-11">7703133086479</h6>
+                                    <div class="uk-flex uk-flex-middle uk-flex-center">
+                                        <h6 class="uk-margin-remove font-size-9">Impuesto:</h6>
+                                        <h6 class="uk-margin-remove font-size-9" style="padding-left: 10px;">0%</h6>
+                                    </div>
+                                </div>
+                                <button class="button-card-add-product-sales font-size-10 uk-text-bold cursor-pointer">Agregar</BUtton>
+                                <div uk-toggle="target: .like-actives6">
+                                    <img class="like-size-card-sales like-actives6" src="./data/Like-desactivado.png" style="position: absolute;" alt="">
+                                    <img class="like-size-card-sales like-actives6" src="./data/Like-activado.png" style="position: absolute;" alt="" hidden>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-card uk-card-default uk-card-body card-products-add-sales uk-flex" style="position: relative; margin-right: 80px;">
+                            <div class="uk-width-1-2" style="padding-top: 8px;">
+                                <div class="img-items-products-add-70-sales" style="background-image: url(./data/burguer.png);" uk-img></div>
+                                <h5 class="uk-margin-remove font-size-12 uk-text-muted" style="padding-top: 5px; padding-left: 13px;">15.000$</h5>
+                            </div>
+                            <h6 class="button-discount-card-sales" style="position: absolute;">-25%</h6>
+                            <div class="uk-width-1-2 uk-text-center">
+                                <h6 class="uk-margin-remove font-size-12 color-red-two uk-text-bold">Hamburguesa 1</h6>
+                                <div style="margin-top: 15px;">
+                                    <h6 class="uk-margin-remove font-size-11">7703133086479</h6>
+                                    <div class="uk-flex uk-flex-middle uk-flex-center">
+                                        <h6 class="uk-margin-remove font-size-9">Impuesto:</h6>
+                                        <h6 class="uk-margin-remove font-size-9" style="padding-left: 10px;">0%</h6>
+                                    </div>
+                                </div>
+                                <button class="button-card-add-product-sales font-size-10 uk-text-bold cursor-pointer">Agregar</BUtton>
+                                <div uk-toggle="target: .like-actives7">
+                                    <img class="like-size-card-sales like-actives7" src="./data/Like-desactivado.png" style="position: absolute;" alt="">
+                                    <img class="like-size-card-sales like-actives7" src="./data/Like-activado.png" style="position: absolute;" alt="" hidden>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-card uk-card-default uk-card-body card-products-add-sales uk-flex" style="position: relative;">
+                            <div class="uk-width-1-2" style="padding-top: 8px;">
+                                <div class="img-items-products-add-70-sales" style="background-image: url(./data/burguer.png);" uk-img></div>
+                                <h5 class="uk-margin-remove font-size-12 uk-text-muted" style="padding-top: 5px; padding-left: 13px;">15.000$</h5>
+                            </div>
+                            <h6 class="button-discount-card-sales" style="position: absolute;">-25%</h6>
+                            <div class="uk-width-1-2 uk-text-center">
+                                <h6 class="uk-margin-remove font-size-12 color-red-two uk-text-bold">Hamburguesa 1</h6>
+                                <div style="margin-top: 15px;">
+                                    <h6 class="uk-margin-remove font-size-11">7703133086479</h6>
+                                    <div class="uk-flex uk-flex-middle uk-flex-center">
+                                        <h6 class="uk-margin-remove font-size-9">Impuesto:</h6>
+                                        <h6 class="uk-margin-remove font-size-9" style="padding-left: 10px;">0%</h6>
+                                    </div>
+                                </div>
+                                <button class="button-card-add-product-sales font-size-10 uk-text-bold cursor-pointer">Agregar</BUtton>
+                                <div uk-toggle="target: .like-actives8">
+                                    <img class="like-size-card-sales like-actives8" src="./data/Like-desactivado.png" style="position: absolute;" alt="">
+                                    <img class="like-size-card-sales like-actives8" src="./data/Like-activado.png" style="position: absolute;" alt="" hidden>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-card uk-card-default uk-card-body card-products-add-sales uk-flex" style="position: relative; margin-right: 80px;">
+                            <div class="uk-width-1-2" style="padding-top: 8px;">
+                                <div class="img-items-products-add-70-sales" style="background-image: url(./data/burguer.png);" uk-img></div>
+                                <h5 class="uk-margin-remove font-size-12 uk-text-muted" style="padding-top: 5px; padding-left: 13px;">15.000$</h5>
+                            </div>
+                            <h6 class="button-discount-card-sales" style="position: absolute;">-25%</h6>
+                            <div class="uk-width-1-2 uk-text-center">
+                                <h6 class="uk-margin-remove font-size-12 color-red-two uk-text-bold">Hamburguesa 1</h6>
+                                <div style="margin-top: 15px;">
+                                    <h6 class="uk-margin-remove font-size-11">7703133086479</h6>
+                                    <div class="uk-flex uk-flex-middle uk-flex-center">
+                                        <h6 class="uk-margin-remove font-size-9">Impuesto:</h6>
+                                        <h6 class="uk-margin-remove font-size-9" style="padding-left: 10px;">0%</h6>
+                                    </div>
+                                </div>
+                                <button class="button-card-add-product-sales font-size-10 uk-text-bold cursor-pointer">Agregar</BUtton>
+                                <div uk-toggle="target: .like-actives9">
+                                    <img class="like-size-card-sales like-actives9" src="./data/Like-desactivado.png" style="position: absolute;" alt="">
+                                    <img class="like-size-card-sales like-actives9" src="./data/Like-activado.png" style="position: absolute;" alt="" hidden>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-card uk-card-default uk-card-body card-products-add-sales uk-flex" style="position: relative; margin-right: 80px;">
+                            <div class="uk-width-1-2" style="padding-top: 8px;">
+                                <div class="img-items-products-add-70-sales" style="background-image: url(./data/burguer.png);" uk-img></div>
+                                <h5 class="uk-margin-remove font-size-12 uk-text-muted" style="padding-top: 5px; padding-left: 13px;">15.000$</h5>
+                            </div>
+                            <h6 class="button-discount-card-sales" style="position: absolute;">-25%</h6>
+                            <div class="uk-width-1-2 uk-text-center">
+                                <h6 class="uk-margin-remove font-size-12 color-red-two uk-text-bold">Hamburguesa 1</h6>
+                                <div style="margin-top: 15px;">
+                                    <h6 class="uk-margin-remove font-size-11">7703133086479</h6>
+                                    <div class="uk-flex uk-flex-middle uk-flex-center">
+                                        <h6 class="uk-margin-remove font-size-9">Impuesto:</h6>
+                                        <h6 class="uk-margin-remove font-size-9" style="padding-left: 10px;">0%</h6>
+                                    </div>
+                                </div>
+                                <button class="button-card-add-product-sales font-size-10 uk-text-bold cursor-pointer">Agregar</BUtton>
+                                <div uk-toggle="target: .like-actives10">
+                                    <img class="like-size-card-sales like-actives10" src="./data/Like-desactivado.png" style="position: absolute;" alt="">
+                                    <img class="like-size-card-sales like-actives10" src="./data/Like-activado.png" style="position: absolute;" alt="" hidden>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-card uk-card-default uk-card-body card-products-add-sales uk-flex" style="position: relative;">
+                            <div class="uk-width-1-2" style="padding-top: 8px;">
+                                <div class="img-items-products-add-70-sales" style="background-image: url(./data/burguer.png);" uk-img></div>
+                                <h5 class="uk-margin-remove font-size-12 uk-text-muted" style="padding-top: 5px; padding-left: 13px;">15.000$</h5>
+                            </div>
+                            <h6 class="button-discount-card-sales" style="position: absolute;">-25%</h6>
+                            <div class="uk-width-1-2 uk-text-center">
+                                <h6 class="uk-margin-remove font-size-12 color-red-two uk-text-bold">Hamburguesa 1</h6>
+                                <div style="margin-top: 15px;">
+                                    <h6 class="uk-margin-remove font-size-11">7703133086479</h6>
+                                    <div class="uk-flex uk-flex-middle uk-flex-center">
+                                        <h6 class="uk-margin-remove font-size-9">Impuesto:</h6>
+                                        <h6 class="uk-margin-remove font-size-9" style="padding-left: 10px;">0%</h6>
+                                    </div>
+                                </div>
+                                <button class="button-card-add-product-sales font-size-10 uk-text-bold cursor-pointer">Agregar</BUtton>
+                                <div uk-toggle="target: .like-actives11">
+                                    <img class="like-size-card-sales like-actives11" src="./data/Like-desactivado.png" style="position: absolute;" alt="">
+                                    <img class="like-size-card-sales like-actives11" src="./data/Like-activado.png" style="position: absolute;" alt="" hidden>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-card uk-card-default uk-card-body card-products-add-sales uk-flex" style="position: relative; margin-right: 80px;">
+                            <div class="uk-width-1-2" style="padding-top: 8px;">
+                                <div class="img-items-products-add-70-sales" style="background-image: url(./data/burguer.png);" uk-img></div>
+                                <h5 class="uk-margin-remove font-size-12 uk-text-muted" style="padding-top: 5px; padding-left: 13px;">15.000$</h5>
+                            </div>
+                            <h6 class="button-discount-card-sales" style="position: absolute;">-25%</h6>
+                            <div class="uk-width-1-2 uk-text-center">
+                                <h6 class="uk-margin-remove font-size-12 color-red-two uk-text-bold">Hamburguesa 1</h6>
+                                <div style="margin-top: 15px;">
+                                    <h6 class="uk-margin-remove font-size-11">7703133086479</h6>
+                                    <div class="uk-flex uk-flex-middle uk-flex-center">
+                                        <h6 class="uk-margin-remove font-size-9">Impuesto:</h6>
+                                        <h6 class="uk-margin-remove font-size-9" style="padding-left: 10px;">0%</h6>
+                                    </div>
+                                </div>
+                                <button class="button-card-add-product-sales font-size-10 uk-text-bold cursor-pointer">Agregar</BUtton>
+                                <div uk-toggle="target: .like-actives11">
+                                    <img class="like-size-card-sales like-actives11" src="./data/Like-desactivado.png" style="position: absolute;" alt="">
+                                    <img class="like-size-card-sales like-actives11" src="./data/Like-activado.png" style="position: absolute;" alt="" hidden>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-card uk-card-default uk-card-body card-products-add-sales uk-flex" style="position: relative; margin-right: 80px;">
+                            <div class="uk-width-1-2" style="padding-top: 8px;">
+                                <div class="img-items-products-add-70-sales" style="background-image: url(./data/burguer.png);" uk-img></div>
+                                <h5 class="uk-margin-remove font-size-12 uk-text-muted" style="padding-top: 5px; padding-left: 13px;">15.000$</h5>
+                            </div>
+                            <h6 class="button-discount-card-sales" style="position: absolute;">-25%</h6>
+                            <div class="uk-width-1-2 uk-text-center">
+                                <h6 class="uk-margin-remove font-size-12 color-red-two uk-text-bold">Hamburguesa 1</h6>
+                                <div style="margin-top: 15px;">
+                                    <h6 class="uk-margin-remove font-size-11">7703133086479</h6>
+                                    <div class="uk-flex uk-flex-middle uk-flex-center">
+                                        <h6 class="uk-margin-remove font-size-9">Impuesto:</h6>
+                                        <h6 class="uk-margin-remove font-size-9" style="padding-left: 10px;">0%</h6>
+                                    </div>
+                                </div>
+                                <button class="button-card-add-product-sales font-size-10 uk-text-bold cursor-pointer">Agregar</BUtton>
+                                <div uk-toggle="target: .like-actives11">
+                                    <img class="like-size-card-sales like-actives11" src="./data/Like-desactivado.png" style="position: absolute;" alt="">
+                                    <img class="like-size-card-sales like-actives11" src="./data/Like-activado.png" style="position: absolute;" alt="" hidden>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-card uk-card-default uk-card-body card-products-add-sales uk-flex" style="position: relative;">
+                            <div class="uk-width-1-2" style="padding-top: 8px;">
+                                <div class="img-items-products-add-70-sales" style="background-image: url(./data/burguer.png);" uk-img></div>
+                                <h5 class="uk-margin-remove font-size-12 uk-text-muted" style="padding-top: 5px; padding-left: 13px;">15.000$</h5>
+                            </div>
+                            <h6 class="button-discount-card-sales" style="position: absolute;">-25%</h6>
+                            <div class="uk-width-1-2 uk-text-center">
+                                <h6 class="uk-margin-remove font-size-12 color-red-two uk-text-bold">Hamburguesa 1</h6>
+                                <div style="margin-top: 15px;">
+                                    <h6 class="uk-margin-remove font-size-11">7703133086479</h6>
+                                    <div class="uk-flex uk-flex-middle uk-flex-center">
+                                        <h6 class="uk-margin-remove font-size-9">Impuesto:</h6>
+                                        <h6 class="uk-margin-remove font-size-9" style="padding-left: 10px;">0%</h6>
+                                    </div>
+                                </div>
+                                <button class="button-card-add-product-sales font-size-10 uk-text-bold cursor-pointer">Agregar</BUtton>
+                                <div uk-toggle="target: .like-actives11">
+                                    <img class="like-size-card-sales like-actives11" src="./data/Like-desactivado.png" style="position: absolute;" alt="">
+                                    <img class="like-size-card-sales like-actives11" src="./data/Like-activado.png" style="position: absolute;" alt="" hidden>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="main-container-products-selection-second-sales">
+                            <div>
+                                <h6 class="uk-margin-remove uk-text-bold font-size-11">Productos relacionados</h6>
+                                <div class="related-products-box-sales padding-horizontal-10">
+                                    <div class="padding-horizontal-25 padding-vertical-10">
+                                        <div class="padding-vertical-5">
+                                            <h6 class="uk-margin-remove uk-text-bold font-size-14 color-red-3">Hamburguesa 1</h6>
+                                            <h6 class="uk-margin-remove uk-text-bold font-size-13">15.000$</h6>
+                                        </div>
+                                        <div class="uk-flex" style="margin-bottom: 10px;">
+                                            <div class="uk-flex uk-flex-middle">
+                                                <div style="margin-right: 30px;">
+                                                    <div class="uk-flex uk-flex-middle">
+                                                        <h6 class="uk-margin-remove font-weight-500 font-size-12">Salsas</h6>
+                                                        <i class="fas fa-caret-down" style="margin-left: 5px;"></i>
+                                                    </div>
+                                                    <div class="uk-flex uk-flex-middle">
+                                                        <h6 class="uk-margin-remove font-weight-500 font-size-12">Adicionales</h6>
+                                                        <i class="fas fa-caret-down" style="margin-left: 5px;"></i>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="uk-flex uk-flex-middle">
+                                                        <h6 class="uk-margin-remove font-weight-500 font-size-12">Verduras</h6>
+                                                        <i class="fas fa-caret-down" style="margin-left: 5px;"></i>
+                                                    </div>
+                                                    <div class="uk-flex uk-flex-middle">
+                                                        <h6 class="uk-margin-remove font-weight-500 font-size-12">Papas:</h6>
+                                                        <h6 class="uk-margin-remove uk-text-light font-size-12" style="padding-left: 5px;">Si</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="margin-left: 30px;">
+                                                <div class="uk-flex uk-flex-middle uk-flex-center">
+                                                    <i class="fas fa-minus font-size-10 color-green-minus-plus cursor-pointer"></i>
+                                                    <h6 class="uk-margin-remove padding-horizontal-20 color-green-minus-plus uk-text-bold font-size-12">1</h6>
+                                                    <i class="fas fa-plus font-size-10 color-green-minus-plus cursor-pointer"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="uk-margin-remove font-size-11 uk-text-muted uk-text-center">Quitar</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hr-tab"></div>
+                                    <div class="padding-horizontal-25 padding-vertical-10">
+                                        <div class="padding-vertical-5">
+                                            <h6 class="uk-margin-remove uk-text-bold font-size-14 color-red-3">Hamburguesa 2</h6>
+                                            <h6 class="uk-margin-remove uk-text-bold font-size-13">15.000$</h6>
+                                        </div>
+                                        <div class="uk-flex" style="margin-bottom: 10px;">
+                                            <div class="uk-flex uk-flex-middle">
+                                                <div style="margin-right: 30px;">
+                                                    <div class="uk-flex uk-flex-middle">
+                                                        <h6 class="uk-margin-remove font-weight-500 font-size-12">Salsas</h6>
+                                                        <i class="fas fa-caret-down" style="margin-left: 5px;"></i>
+                                                    </div>
+                                                    <div class="uk-flex uk-flex-middle">
+                                                        <h6 class="uk-margin-remove font-weight-500 font-size-12">Adicionales</h6>
+                                                        <i class="fas fa-caret-down" style="margin-left: 5px;"></i>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="uk-flex uk-flex-middle">
+                                                        <h6 class="uk-margin-remove font-weight-500 font-size-12">Verduras</h6>
+                                                        <i class="fas fa-caret-down" style="margin-left: 5px;"></i>
+                                                    </div>
+                                                    <div class="uk-flex uk-flex-middle">
+                                                        <h6 class="uk-margin-remove font-weight-500 font-size-12">Papas:</h6>
+                                                        <h6 class="uk-margin-remove uk-text-light font-size-12" style="padding-left: 5px;">Si</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="margin-left: 30px;">
+                                                <div class="uk-flex uk-flex-middle uk-flex-center">
+                                                    <i class="fas fa-minus font-size-10 color-green-minus-plus cursor-pointer"></i>
+                                                    <h6 class="uk-margin-remove padding-horizontal-20 color-green-minus-plus uk-text-bold font-size-12">1</h6>
+                                                    <i class="fas fa-plus font-size-10 color-green-minus-plus cursor-pointer"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="uk-margin-remove font-size-11 uk-text-muted uk-text-center">Quitar</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hr-tab"></div>
+                                    <div class="padding-horizontal-25 padding-vertical-10">
+                                        <div class="padding-vertical-5">
+                                            <h6 class="uk-margin-remove uk-text-bold font-size-14 color-red-3">Hamburguesa 3</h6>
+                                            <h6 class="uk-margin-remove uk-text-bold font-size-13">15.000$</h6>
+                                        </div>
+                                        <div class="uk-flex" style="margin-bottom: 10px;">
+                                            <div class="uk-flex uk-flex-middle">
+                                                <div style="margin-right: 30px;">
+                                                    <div class="uk-flex uk-flex-middle">
+                                                        <h6 class="uk-margin-remove font-weight-500 font-size-12">Salsas</h6>
+                                                        <i class="fas fa-caret-down" style="margin-left: 5px;"></i>
+                                                    </div>
+                                                    <div class="uk-flex uk-flex-middle">
+                                                        <h6 class="uk-margin-remove font-weight-500 font-size-12">Adicionales</h6>
+                                                        <i class="fas fa-caret-down" style="margin-left: 5px;"></i>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="uk-flex uk-flex-middle">
+                                                        <h6 class="uk-margin-remove font-weight-500 font-size-12">Verduras</h6>
+                                                        <i class="fas fa-caret-down" style="margin-left: 5px;"></i>
+                                                    </div>
+                                                    <div class="uk-flex uk-flex-middle">
+                                                        <h6 class="uk-margin-remove font-weight-500 font-size-12">Papas:</h6>
+                                                        <h6 class="uk-margin-remove uk-text-light font-size-12" style="padding-left: 5px;">Si</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="margin-left: 30px;">
+                                                <div class="uk-flex uk-flex-middle uk-flex-center">
+                                                    <i class="fas fa-minus font-size-10 color-green-minus-plus cursor-pointer"></i>
+                                                    <h6 class="uk-margin-remove padding-horizontal-20 color-green-minus-plus uk-text-bold font-size-12">1</h6>
+                                                    <i class="fas fa-plus font-size-10 color-green-minus-plus cursor-pointer"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="uk-margin-remove font-size-11 uk-text-muted uk-text-center">Quitar</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uk-flex uk-flex-middle padding-vertical-3" style="padding-left: 42px;">
+                                <h6 class="uk-margin-remove font-size-9 uk-text-muted">Numero de items:</h6>
+                                <h6 class="uk-margin-remove font-size-9 uk-text-muted">3</h6>
+                            </div>
+                            <div class="uk-flex uk-flex-middle uk-flex-around padding-vertical-10" style="margin-top: 15px;">
+                                <div>
+                                    <h3 class="uk-margin-remove uk-text-bold">Total</h3>
+                                    <div class="uk-flex uk-flex-middle">
+                                        <h6 class="uk-margin-remove uk-text-bold font-size-12">Subtotal</h6>
+                                        <h6 class="uk-margin-remove uk-text-bold font-size-12 padding-horizontal-5">$55,000</h6>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="uk-margin-remove uk-text-bold">$55,000</h3>
+                                    <div class="uk-flex uk-flex-middle">
+                                        <h6 class="uk-margin-remove uk-text-bold font-size-12">Impuesto</h6>
+                                        <h6 class="uk-margin-remove uk-text-bold font-size-12 padding-horizontal-5">$0</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="select-seller-sales" style="margin-left: 36px; margin-bottom: 20px;">
+                                <select>
+                                <option>Sin vendedor</option>
+                                <option>opción 1</option>
+                                <option>opción 2</option>
+                                <option>opción 3</option>
+                                <option>opción 4</option>
+                            </select>
+                                <div class="select_arrow-seller-sales">
+                                </div>
+                            </div>
+                            <div style="margin-top: 15px; margin-left: 25px;">
+                                <div class="uk-flex uk-flex-middle" style="margin-bottom: 5px;">
+                                    <button class="buttons-total-sales uk-text-bold" style="font-size: 10px !important; width: 80px !important; margin-right: 5px; color: #34B38C !important;">Manual</button>
+                                    <button class="buttons-total-sales uk-text-bold" style="font-size: 10px !important; width: 120px !important; margin-right: 5px; color: #34B351 !important;">Rápida con factura</button>
+                                    <button class="buttons-total-sales" style="font-size: 10px !important; width: 80px !important; color: #69B334 !important; font-weight: 800;">Rápida</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile" id="body-height">
+        <!-- Navbar -->
+        <div>
+            <div class="uk-box-shadow-medium">
+                <div class="uk-flex uk-flex-middle" style="padding-top: 5px;">
+                    <i class="fas fa-angle-double-left padding-horizontal-5 uk-text-muted"></i>
+                    <div class="uk-link-muted">Regresar</div>
+                </div>
+                <img style="width: 220px; padding: 15px;" src="data/tienda724.png" alt="">
+                <div class="uk-flex uk-flex-middle" style="display: none;">
+                    <!--Boton contenido menu usuario-->
+                    <button class="button-menus-navbar-tables-responsive" type="button" style="padding-left: 30px;">
+                       <i class="far fa-user-circle color-blue cursor-pointer" style="font-size: 30PX;"></i>
+                    </button>
+                    <!--Boton contenido menu-->
+                    <button class="button-menus-navbar-tables-responsive" type="button">
+                      <i class="fas fa-bars color-blue cursor-pointer" style="font-size: 30PX;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Menu usuario -->
+        <div id="menu-users" class="background-menus">
+            <div class="style-menu-users">
+                <!--Menu bars overflow-->
+                <ul class="uk-padding-remove">
+                    <div class="uk-flex">
+                        <div class="style-overflow-ventas" id="div-scroll" onscroll="repeatMenu()">
+                            <ul class="uk-list" id="list-user">
+                                <div>
+                                    <li class=" uk-margin-remove uk-flex uk-flex-middle cursor-pointer items-menu">
+                                        <img src="data/1.png " alt=" ">
+                                        <h4 class="uk-text-bold uk-margin-remove color-blue">Ventas</h4>
+                                    </li>
+                                </div>
+                                <li class=" uk-margin-remove uk-flex uk-flex-middle cursor-pointer items-menu padding-top-20 ">
+                                    <img class="padding-right-30 " src="data/2.png " alt=" ">
+                                    <h4 class="uk-text-bold uk-margin-remove color-blue ">Compras</h4>
+                                </li>
+                                <li class=" uk-margin-remove uk-flex uk-flex-middle cursor-pointer items-menu padding-top-20 ">
+                                    <img class="padding-right-30 " src="data/3.png " alt=" ">
+                                    <h4 class="uk-text-bold uk-margin-remove color-blue ">Entradas</h4>
+                                </li>
+                                <li class=" uk-margin-remove uk-flex uk-flex-middle cursor-pointer items-menu padding-top-20 ">
+                                    <img class="padding-right-30 " src="data/4.png " alt=" ">
+                                    <h4 class="uk-text-bold uk-margin-remove color-blue ">Salidas</h4>
+                                </li>
+                                <li class=" uk-margin-remove uk-flex uk-flex-middle cursor-pointer items-menu padding-top-20 ">
+                                    <img class="padding-right-30 " src="data/5.png " alt=" ">
+                                    <h4 class="uk-text-bold uk-margin-remove color-blue ">Devoluciones</h4>
+                                </li>
+                                <li class=" uk-margin-remove uk-flex uk-flex-middle cursor-pointer items-menu padding-top-20 ">
+                                    <img class="padding-right-30 " src="data/6.png " alt=" ">
+                                    <h4 class="uk-text-bold uk-margin-remove color-blue ">Catalogo de productos</h4>
+                                </li>
+                                <li class=" uk-margin-remove uk-flex uk-flex-middle cursor-pointer items-menu padding-top-20 ">
+                                    <img class="padding-right-30 " src="data/7.png " alt=" ">
+                                    <h4 class="uk-text-bold uk-margin-remove color-blue ">Inventario</h4>
+                                </li>
+                                <li class=" uk-margin-remove uk-flex uk-flex-middle cursor-pointer items-menu padding-top-20 ">
+                                    <img class="padding-right-30 " src="data/8.png " alt=" ">
+                                    <h4 class="uk-text-bold uk-margin-remove color-blue ">Reportes</h4>
+                                </li>
+                                <li class=" uk-margin-remove uk-flex uk-flex-middle cursor-pointer items-menu padding-top-20 ">
+                                    <img class="padding-right-30 " src="data/9.png " alt=" ">
+                                    <h4 class="uk-text-bold uk-margin-remove color-blue ">Terceros</h4>
+                                </li>
+                                <li class=" uk-margin-remove uk-flex uk-flex-middle cursor-pointer items-menu padding-top-20 ">
+                                    <img class="padding-right-30 " src="data/10.png " alt=" ">
+                                    <h4 class="uk-text-bold uk-margin-remove color-blue ">Contabilidad</h4>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <!--Menu barras-->
+        <div id="menu-options" class="background-menus">
+            <div class="uk-margin-remove-right style-menu-bars">
+                <ul>
+                    <ul class="uk-nav-default" uk-nav>
+                        <li class="uk-active">
+                            <a href="#">
+                                <h4 class="uk-text-bold">Juan Carlos Botero Balcazar</h4>
+                            </a>
+                            <li class="uk-parent">
+                                <a href="#" style="text-decoration: none;">
+                                    <div class="uk-flex uk-flex-between uk-flex-middle">
+                                        <h4 class="uk-margin-remove">Sysware</h4>
+                                        <i class="fas fa-caret-down" style="font-size: 20px;"></i>
+                                    </div>
+                                </a>
+                                <ul class="uk-nav-sub">
+                                    <li>
+                                        <h4 class="uk-margin-remove"><a href="#" style="text-decoration: none;">Tienda Don Lauro</a></h4>
+                                    </li>
+                                    <li>
+                                        <h4 class="uk-margin-remove"><a href="#" style="text-decoration: none;">JDS BIKES CAÑAS GORDAS</a></h4>
+                                    </li>
+                                    <li>
+                                        <h4 class="uk-margin-remove"><a href="#" style="text-decoration: none;">Sysware</a></h4>
+                                    </li>
+                                    <li>
+                                        <h4 class="uk-margin-remove"><a href="#" style="text-decoration: none;">Ciudad 2000</a></h4>
+                                    </li>
+                                    <li>
+                                        <h4 class="uk-margin-remove"><a href="#" style="text-decoration: none;">Rapitin</a></h4>
+                                    </li>
+                                    <li>
+                                        <h4 class="uk-margin-remove"><a href="#" style="text-decoration: none;">+Kota Gourmet</a></h4>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="uk-parent">
+                                <a href="#">
+                                    <div class="uk-flex uk-flex-between uk-flex-middle">
+                                        <h4 class="uk-margin-remove">Información de usuario</h4>
+                                        <i class="fas fa-caret-down" style="font-size: 20px;"></i>
+                                    </div>
+                                </a>
+                                <ul class="uk-nav-sub">
+                                    <li><a href="#">Sub item</a></li>
+                                    <li><a href="#">Sub item</a></li>
+                                </ul>
+                            </li>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+        <!-- Navbar 2 -->
+        <div style="display: none;">
+            <div class="uk-flex uk-flex-middle uk-box-shadow-medium  padding-horizontal-10">
+                <button onclick="openMenu('information')" class="button-menu cursor-pointer" type="button" style="padding-right: 5px;">
+                    <img class="logo13-size uk-margin-remove" src="./data/13.png">
+                 </button>
+                <div class="uk-flex uk-flex-middle">
+                    <h4 class="uk-margin-top" style="margin-right: 10px">Tienda:</h4>
+                    <div class="uk-inline">
+                        <a class="uk-flex uk-flex-middle uk-margin-remove-right" style="width: 90%;" href="#">
+                            <button class="dropdown-buttom cursor-pointer">
+                                <div class="uk-flex uk-flex-middle">
+                                    <img class="logo2-size" src="./data/logo2.png">
+                                     <i class="fas fa-caret-down uk-margin-remove font-size-18" style="padding-left:10px;"></i>
+                                </div>
+                            </button>
+                        </a>
+                        <div uk-dropdown="mode: click">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
+                    </div>
+                </div>
+                <div class="uk-flex uk-flex-middle" style="margin-right: 10px;">
+                    <h4 class="uk-margin-remove">Caja:</h4>
+                    <a class="uk-flex uk-flex-middle uk-margin-remove" style="width: 50%; text-decoration: none;;" href="#">
+                        <button class="dropdown-buttom cursor-pointer">
+                            <div class="uk-flex uk-flex-middle">
+                                <h4 class="uk-margin-remove uk-text-bold">1</h4>
+                                <i class="fas fa-caret-down" style="margin-left: 10px; font-size: 18px;"></i>
+                            </div>
+                        </button>
+                    </a>
+                    <div uk-dropdown="mode: click">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
+                </div>
+            </div>
+        </div>
+        <!-- Menu informacion de tienda -->
+        <div id="menu-information" class="background-menus">
+            <ul class="uk-nav-default style-menu-information" style="padding-left: 20px; padding-top: 5px;" uk-nav>
+                <div>
+                    <ul class="uk-nav-default uk-nav-parent-icon " uk-nav>
+                        <li class=" uk-margin-remove uk-flex uk-flex-middle">
+                            <h5 class="uk-text-bold uk-margin-remove ">Facturas:</h5>
+                            <p style="font-size: 120%; ">1</p>
+                        </li>
+                        <div class="uk-text-middle margin-top-20 ">
+                            <h5 class="uk-text-bold uk-margin-remove ">Modo:</h5>
+                            <h5 class="uk-text-bold uk-margin-remove " style="color: #19bb21 ">ONLINE</h5>
+                        </div>
+                        <hr>
+                        <div class="uk-text-middle margin-top-20 ">
+                            <h5 class="uk-text-bold uk-margin-remove ">Offline</h5>
+                        </div>
+                        <hr>
+                        <div class="uk-text-middle margin-top-20 ">
+                            <h5 class="uk-text-bold uk-margin-remove ">Opciones de caja</h5>
+                        </div>
+                        <hr>
+                        <div class="uk-text-middle margin-top-20" style="padding-bottom:20px ;">
+                            <h5 class="uk-text-bold uk-margin-remove">Productos mas vendidos</h5>
+                        </div>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+        <!--Contenido para pestaña para tab productos por lista-->
+        <div style="display: inline;">
+            <div class="uk-flex uk-flex-middle uk-box-shadow-medium uk-flex-between padding-horizontal-20 padding-vertical-10">
+                <i class="fas fa-search " style="color: black; font-size: 20px; padding-right: 10px ; "></i>
+                <form class="uk-search uk-search-medium">
+                    <input class="uk-search-input uk-text-light form-search " type="search " placeholder="Buscador de productos ">
+                </form>
+                <div>
+                    <button class=" uk-text-capitalize uk-text-bold uk-button uk-button-default buttom-search " style="margin-left: 15px;">Recargar</button>
+                </div>
+            </div>
+            <!-- Switcher -->
+            <div class="uk-flex uk-flex-middle" uk-switcher>
+                <div class="button-select-search-option-tables-responsive uk-flex uk-flex-middle">
+                    <h4 class="uk-text-center uk-text-bold uk-margin-remove padding-horizontal-40">Productos por lista</h4>
+                </div>
+                <div class="button-select-search-option-tables-responsive uk-flex uk-flex-middle">
+                    <h4 class="uk-text-center uk-text-bold uk-margin-remove" style="padding-left: 15px;">Productos por categorias</h4>
+                </div>
+            </div>
+            <div class="uk-switcher">
+                <div style="margin-top: 10px;">
+                    <div class="uk-flex">
+                        <div style="width: 100%; max-height: 280px !important; overflow: auto;">
+                            <ul class="uk-list">
+                                <li class="item-list uk-margin-remove ">Aguardiente botella - 4500117 - 17</li>
+                                <div class="hr-tab uk-margin-remove "></div>
+                                <li class="item-list uk-margin-remove ">Aguila light - 4500128 - 25</li>
+                                <div class="hr-tab uk-margin-remove "></div>
+                                <li class="item-list uk-margin-remove ">Agua con gas - 4500108 - 15</li>
+                                <div class="hr-tab uk-margin-remove "></div>
+                                <li class="item-list uk-margin-remove ">Agua grande - 4500107 - 7</li>
+                                <div class="hr-tab uk-margin-remove "></div>
+                                <li class="item-list uk-margin-remove ">Aguardiente botella - 4500117 - 17</li>
+                                <div class="hr-tab uk-margin-remove "></div>
+                                <li class="item-list uk-margin-remove ">Aguila light - 4500128 - 25</li>
+                                <div class="hr-tab uk-margin-remove "></div>
+                                <li class="item-list uk-margin-remove ">Agua con gas - 4500108 - 15</li>
+                                <div class="hr-tab uk-margin-remove "></div>
+                                <li class="item-list uk-margin-remove ">Agua grande - 4500107 - 7</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-flex uk-flex-middle uk-flex-between uk-box-shadow-medium padding-horizontal-20 height-80 ">
+                            <h4 class="uk-margin-remove ">Productos seleccionados: 1</h4>
+                            <i class="fas fa-caret-left uk-margin-remove " style="padding-right: 10px; font-size: 25px; "></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-flex uk-flex-between " style="margin-top: 15px; padding-left: 20px; ">
+                            <div class="uk-text-middle uk-text-left ">
+                                <h6 class="uk-text-bold uk-margin-remove font-size-17 ">Agua con gas - 4500108 - 15</h6>
+                                <div uk-form-custom="target:> * > span:first-child" class="uk-margin-remove" style="padding-top: 10px">
+                                    <select>
+                                        <option value=" ">Bodega 1</option>
+                                        <option value="1 ">Option 01</option>
+                                    </select>
+                                    <button class="form-select " type="button " tabindex="-1 ">
+                                        <span></span>
+                                        <span uk-icon="icon: chevron-down "></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="uk-flex-middle uk-text-center " style="padding-right: 40px; ">
+                                <h3 class="uk-text-bold uk-margin-remove " style="color: #19bb21 ">- 1 +</h3>
+                                <h5 class="uk-text-lighter uk-margin-remove font-size-18 ">Quitar</h5>
+                            </div>
+                        </div>
+                        <div class="uk-flex uk-flex-between " style="padding: 20px; ">
+                            <h6 class="uk-text-bold uk-margin-remove font-size-15 ">Valor unitario: 1,129$</h6>
+                            <h6 class="uk-text-lighter uk-margin-remove font-size-15 ">Impuesto: 0%</h6>
+                            <h6 class="uk-text-lighter uk-margin-remove font-size-15 " style="padding-right: 10px ">Total: 1,129$</h6>
+                        </div>
+                        <div class="background-gray uk-margin-remove " style="padding-top: 20px; padding-left: 30px; ">
+                            <div class="uk-flex ">
+                                <h5 class="uk-text-light uk-margin-remove font-size-17 ">Subtotal: 2,550$</h5>
+                                <h5 class="uk-text-light uk-margin-remove font-size-17" style="padding-left: 30px; ">Impuesto: 0$</h5>
+                            </div>
+                            <div>
+                                <h2 class="uk-text-bold uk-margin-remove " style="padding-top: 10px; padding-bottom: 20px; ">Total: 2.550$</h2>
+                            </div>
+                        </div>
+                        <div class="uk-margin-remove padding-horizontal-30" style="padding: 20px; ">
+                            <h4 class="uk-margin-remove uk-text-bold" style="padding-bottom:10px; color: grey;">Seleccione el domiciliario</h4>
+                            <select class="form-select" style="width: 100% !important;">
+                                    <option class="select-items" value="">Sin domiciliario</option>
+                                    <option class="select-items" value="">Opción 1</option>
+                            </select>
+                        </div>
+                        <div class="padding-horizontal-30" style="padding-bottom: 30px; ">
+                            <h4 class="uk-margin-remove uk-text-bold " style="padding-bottom: 20px; ">Operaciones de confirmación</h4>
+                            <div class="uk-flex uk-flex-left " uk-grid>
+                                <div class="uk-width-2-5 " style="padding-right: 3%; ">
+                                    <button class=" uk-button uk-margin-remove buttom-tel "><h6 class="uk-margin-remove uk-text-center font-size-18 uk-text-lighter">Manual</h6></button>
+                                </div>
+                                <div class="uk-width-3-5 " style="padding: 0px; margin: 0px; ">
+                                    <button class="uk-button uk-margin-remove buttom-tel "><h6 class="uk-margin-remove font-size-18 uk-text-lighter">Rápida con factura</h6></button>
+                                </div>
+                            </div>
+                            <div style="padding-top: 10px; ">
+                                <button class="uk-button buttom-tel "><h6 class="color-green uk-margin-remove font-size-18 uk-text-bold"> Rápida</h6></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="uk-flex uk-flex-middle">
+                        <div class="button-select-search-cat uk-box-shadow-hover-large uk-flex uk-flex-middle uk-flex-center">
+                            <button onclick="openMenu('categories')" class="uk-text-capitalize uk-text-bold uk-button uk-button-default buttom-search-cat">Zapatos</button>
+                        </div>
+                        <div class="button-select-search-cat uk-box-shadow-hover-large uk-flex uk-flex-middle uk-flex-center" style="width: 170px;">
+                            <div class="background-green-buy">
+                                <div class="uk-flex uk-flex-middle" style="padding-left: 20px; width: 100px;">
+                                    <h5 class="uk-margin-remove" style="padding-right:20px ;">0$</h5>
+                                    <div class="uk-flex uk-flex-middle" style="width: 100px !important;">
+                                        <div class="hr-vertical" style="margin-right: 10px;"></div>
+                                        <a style="position: relative; " href=" ">
+                                            <img class="img-size-1" src="./data/Carrito-de-compras.png " alt=" " uk-img>
+                                            <h6 class="text-img-buy" style="position: absolute; ">0</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="menu-categories" class="background-menus">
+                        <div class="uk-margin-remove-right style-menu-categories">
+                            <ul class="uk-list">
+                                <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-15">Industrial</h5>
+                                <div class="hr-tab color-grey uk-margin-remove"></div>
+                                <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-15">Comidas</h5>
+                                <div class="hr-tab color-grey uk-margin-remove"></div>
+                                <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-15">Accesorios</h5>
+                                <div class="hr-tab color-grey uk-margin-remove"></div>
+                                <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-15">Bicicletas</h5>
+                                <div class="hr-tab color-grey uk-margin-remove"></div>
+                                <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-15">Deportivo</h5>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="uk-flex uk-flex-middle scrollhorizontal">
+                        <div class="uk-text-center " style="margin-right: 20px; ">
+                            <div onclick="openMenu('subcategories')" class="img-items-products cursor-pointer" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                            <h5 class="uk-margin-remove uk-text-bold ">Mocacines</h5>
+                        </div>
+                        <div onclick="openMenu('subcategories')" class="uk-text-center " style="margin-right: 20px; ">
+                            <div class="img-items-products cursor-pointer" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                            <h5 class="uk-margin-remove uk-text-bold uk-text-center ">Formales</h5>
+                        </div>
+                        <div onclick="openMenu('subcategories')" class="uk-text-center " style="margin-right: 20px; ">
+                            <div class="img-items-products cursor-pointer" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                            <h5 class="uk-margin-remove uk-text-bold uk-text-center ">Formales</h5>
+                        </div>
+                        <div onclick="openMenu('subcategories')" class="uk-text-center " style="margin-right: 20px; ">
+                            <div class="img-items-products cursor-pointer" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                            <h5 class="uk-margin-remove uk-text-bold uk-text-center ">Formales</h5>
+                        </div>
+                        <div onclick="openMenu('subcategories')" class="uk-text-center " style="margin-right: 20px; ">
+                            <div class="img-items-products cursor-pointer" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                            <h5 class="uk-margin-remove uk-text-bold uk-text-center ">Formales</h5>
+                        </div>
+                    </div>
+                    <div id="menu-subcategories" class="background-menus">
+                        <div class="uk-margin-remove-right style-menu-categories">
+                            <ul class="uk-list">
+                                <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-15">Mocacines formales</h5>
+                                <div class="hr-tab color-grey uk-margin-remove"></div>
+                                <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-15">Mocacines informales</h5>
+                                <div class="hr-tab color-grey uk-margin-remove"></div>
+                                <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-15">Mocaciones deportivos</h5>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="padding: 20px;">
+                        <h6 class="uk-text-muted uk-margin-remove">Zapatos > Mocacines > Mocacines Formales</h6>
+                        <h3 class="uk-text-bold uk-margin-remove" style="padding-top: 5px;">Mocacines</h3>
+                        <div class="uk-flex " style="margin-top: 5px;">
+                            <div class="uk-width-1-3" style="position: relative;">
+                                <div class="img-items-products-add" style="background-image: url(./data/shoes1.png);" uk-img></div>
+                                <a href="#" uk-toggle="target: .like-active">
+                                    <img class="like-size like-active" style="position: absolute; " src="./data/Like-desactivado.png " alt=" ">
+                                    <img class="like-size like-active" style="position: absolute; " src="./data/Like-activado.png " alt=" " hidden>
+                                </a>
+                            </div>
+                            <div class="uk-width-1-3 uk-flex uk-flex-middle" style="padding-left: 10px;">
+                                <div>
+                                    <h5 class="uk-text-bold uk-margin-remove ">AK116BIS</h5>
+                                    <h5 class="uk-margin-remove ">75.000$</h5>
+                                </div>
+                            </div>
+                            <div class="uk-width-1-3 uk-width-1-3 uk-flex uk-flex-middle ">
+                                <button class="uk-text-capitalize uk-text-bold uk-button uk-button-default buttom-add uk-box-shadow-large ">Agregar</button>
+                            </div>
+                        </div>
+                        <div class="uk-flex " style="margin-top: 5px; ">
+                            <div class="uk-width-1-3 " style="position: relative; ">
+                                <div class="img-items-products-add" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                                <a href="#" uk-toggle="target: .like-active-1">
+                                    <img class="like-size like-active-1" style="position: absolute; " src="./data/Like-desactivado.png " alt=" ">
+                                    <img class="like-size like-active-1" style="position: absolute; " src="./data/Like-activado.png " alt=" " hidden>
+                                </a>
+                            </div>
+                            <div class="uk-width-1-3 uk-flex uk-flex-middle" style="padding-left: 10px;">
+                                <div>
+                                    <h5 class="uk-text-bold uk-margin-remove ">LONDON SUEDE</h5>
+                                    <h5 class="uk-margin-remove ">75.000$</h5>
+                                </div>
+                            </div>
+                            <div class="uk-width-1-3 uk-width-1-3 uk-flex uk-flex-middle ">
+                                <button class="uk-text-capitalize uk-text-bold uk-button uk-button-default buttom-add uk-box-shadow-large ">Agregar</button>
+                            </div>
+                        </div>
+                        <div class="uk-flex " style="margin-top: 5px; ">
+                            <div class="uk-width-1-3 " style="position: relative; ">
+                                <div style="position: relative; ">
+                                    <div class="img-items-products-add" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                                    <a href="#" uk-toggle="target: .like-active-2">
+                                        <img class="like-size like-active-2" style="position: absolute; " src="./data/Like-desactivado.png " alt=" ">
+                                        <img class="like-size like-active-2" style="position: absolute; " src="./data/Like-activado.png " alt=" " hidden>
+                                    </a>
+                                </div>
+                                <h6 class="discount uk-text-center " style="position: absolute; ">25%</h6>
+                            </div>
+                            <div class="uk-width-1-3 uk-flex uk-flex-middle uk-flex-center" style="padding-left: 10px;">
+                                <div>
+                                    <h5 class="uk-text-bold uk-margin-remove ">EDERA SPORT MONACO</h5>
+                                    <h5 class="uk-margin-remove ">75.000$</h5>
+                                </div>
+                            </div>
+                            <div class="uk-width-1-3 uk-width-1-3 uk-flex uk-flex-middle ">
+                                <button class="uk-text-capitalize uk-text-bold uk-button uk-button-default buttom-add uk-box-shadow-large ">Agregar</button>
+                            </div>
+                        </div>
+                        <div class="uk-flex " style="margin-top: 5px; ">
+                            <div class="uk-width-1-3 " style="position: relative; ">
+                                <div style="position: relative; ">
+                                    <div class="img-items-products-add" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                                    <a href="#" uk-toggle="target: .like-active-3">
+                                        <img class="like-size like-active-3" style="position: absolute; " src="./data/Like-desactivado.png " alt=" ">
+                                        <img class="like-size like-active-3" style="position: absolute; " src="./data/Like-activado.png " alt=" " hidden>
+                                    </a>
+                                </div>
+                                <h6 class="discount uk-text-center " style="position: absolute; ">50%</h6>
+                            </div>
+                            <div class="uk-width-1-3 uk-flex uk-flex-middle uk-flex-center" style="padding-left: 10px;">
+                                <div>
+                                    <h5 class="uk-text-bold uk-margin-remove ">NAVY FERCA SPORT</h5>
+                                    <h5 class="uk-margin-remove ">75.000$</h5>
+                                </div>
+                            </div>
+                            <div class="uk-width-1-3 uk-width-1-3 uk-flex uk-flex-middle ">
+                                <button class="uk-text-capitalize uk-text-bold uk-button uk-button-default buttom-add uk-box-shadow-large ">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Contenido para pestaña para tab productos por categorias  -->
+        <div style="display: none;">
+            <div class="uk-flex uk-flex-middle uk-box-shadow-medium uk-flex-between padding-horizontal-20 padding-vertical-10">
+                <i class="fas fa-search " style="color: black; font-size: 20px; padding-right: 10px ; "></i>
+                <form class="uk-search uk-search-medium">
+                    <input class="uk-search-input uk-text-light form-search " type="search " placeholder="Buscador de productos ">
+                </form>
+                <div>
+                    <button class=" uk-text-capitalize uk-text-bold uk-button uk-button-default buttom-search " style="margin-left: 15px;">Recargar</button>
+                </div>
+            </div>
+            <div class="uk-flex uk-flex-middle">
+                <div class="uk-width-1-2">
+                    <div class="button-select-search-option uk-box-shadow-hover-large uk-flex uk-flex-middle">
+                        <h4 class="uk-text-center uk-text-bold color-blue uk-margin-remove padding-horizontal-40">Productos por lista</h4>
+                    </div>
+                </div>
+                <div class="uk-width-1-2">
+                    <div class="button-select-search-option uk-box-shadow-hover-large uk-flex uk-flex-middle">
+                        <h4 class="uk-text-center uk-text-bold color-blue uk-margin-remove">Productos por categorias</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-flex uk-flex-middle">
+                <div class="button-select-search-cat uk-box-shadow-hover-large uk-flex uk-flex-middle uk-flex-center">
+                    <button onclick="openMenu('categories')" class="uk-text-capitalize uk-text-bold uk-button uk-button-default buttom-search-cat">Zapatos</button>
+                </div>
+                <div class="button-select-search-cat uk-box-shadow-hover-large uk-flex uk-flex-middle uk-flex-center" style="width: 170px;">
+                    <div class="background-green-buy">
+                        <div class="uk-flex uk-flex-middle" style="padding-left: 20px; width: 100px;">
+                            <h5 class="uk-margin-remove" style="padding-right:20px ;">0$</h5>
+                            <div class="uk-flex uk-flex-middle" style="width: 100px !important;">
+                                <div class="hr-vertical" style="margin-right: 10px;"></div>
+                                <a style="position: relative; " href=" ">
+                                    <img class="img-size-1" src="./data/Carrito-de-compras.png " alt=" " uk-img>
+                                    <h6 class="text-img-buy" style="position: absolute; ">0</h6>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="menu-categories" class="background-menus">
+                <div class="uk-margin-remove-right style-menu-categories">
+                    <ul class="uk-list">
+                        <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-15">Industrial</h5>
+                        <div class="hr-tab color-grey uk-margin-remove"></div>
+                        <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-15">Comidas</h5>
+                        <div class="hr-tab color-grey uk-margin-remove"></div>
+                        <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-15">Accesorios</h5>
+                        <div class="hr-tab color-grey uk-margin-remove"></div>
+                        <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-15">Bicicletas</h5>
+                        <div class="hr-tab color-grey uk-margin-remove"></div>
+                        <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-15">Deportivo</h5>
+                    </ul>
+                </div>
+            </div>
+            <div class="uk-flex uk-flex-middle scrollhorizontal">
+                <div class="uk-text-center " style="margin-right: 20px; ">
+                    <div onclick="openMenu('subcategories')" class="img-items-products cursor-pointer" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                    <h5 class="uk-margin-remove uk-text-bold ">Mocacines</h5>
+                </div>
+                <div onclick="openMenu('subcategories')" class="uk-text-center " style="margin-right: 20px; ">
+                    <div class="img-items-products cursor-pointer" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                    <h5 class="uk-margin-remove uk-text-bold uk-text-center ">Formales</h5>
+                </div>
+                <div onclick="openMenu('subcategories')" class="uk-text-center " style="margin-right: 20px; ">
+                    <div class="img-items-products cursor-pointer" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                    <h5 class="uk-margin-remove uk-text-bold uk-text-center ">Formales</h5>
+                </div>
+                <div onclick="openMenu('subcategories')" class="uk-text-center " style="margin-right: 20px; ">
+                    <div class="img-items-products cursor-pointer" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                    <h5 class="uk-margin-remove uk-text-bold uk-text-center ">Formales</h5>
+                </div>
+                <div onclick="openMenu('subcategories')" class="uk-text-center " style="margin-right: 20px; ">
+                    <div class="img-items-products cursor-pointer" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                    <h5 class="uk-margin-remove uk-text-bold uk-text-center ">Formales</h5>
+                </div>
+            </div>
+            <div id="menu-subcategories" class="background-menus">
+                <div class="uk-margin-remove-right style-menu-categories">
+                    <ul class="uk-list">
+                        <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-15">Mocacines formales</h5>
+                        <div class="hr-tab color-grey uk-margin-remove"></div>
+                        <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-15">Mocacines informales</h5>
+                        <div class="hr-tab color-grey uk-margin-remove"></div>
+                        <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-15">Mocaciones deportivos</h5>
+                    </ul>
+                </div>
+            </div>
+            <div style="padding: 20px;">
+                <h6 class="uk-text-muted uk-margin-remove">Zapatos > Mocacines > Mocacines Formales</h6>
+                <h3 class="uk-text-bold uk-margin-remove" style="padding-top: 5px;">Mocacines</h3>
+                <div class="uk-flex " style="margin-top: 5px;">
+                    <div class="uk-width-1-3" style="position: relative;">
+                        <div class="img-items-products-add" style="background-image: url(./data/shoes1.png);" uk-img></div>
+                        <a href="#" uk-toggle="target: .like-active">
+                            <img class="like-size like-active" style="position: absolute; " src="./data/Like-desactivado.png " alt=" ">
+                            <img class="like-size like-active" style="position: absolute; " src="./data/Like-activado.png " alt=" " hidden>
+                        </a>
+                    </div>
+                    <div class="uk-width-1-3 uk-flex uk-flex-middle" style="padding-left: 10px;">
+                        <div>
+                            <h5 class="uk-text-bold uk-margin-remove ">AK116BIS</h5>
+                            <h5 class="uk-margin-remove ">75.000$</h5>
+                        </div>
+                    </div>
+                    <div class="uk-width-1-3 uk-width-1-3 uk-flex uk-flex-middle ">
+                        <button class="uk-text-capitalize uk-text-bold uk-button uk-button-default buttom-add uk-box-shadow-large ">Agregar</button>
+                    </div>
+                </div>
+                <div class="uk-flex " style="margin-top: 5px; ">
+                    <div class="uk-width-1-3 " style="position: relative; ">
+                        <div class="img-items-products-add" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                        <a href="#" uk-toggle="target: .like-active-1">
+                            <img class="like-size like-active-1" style="position: absolute; " src="./data/Like-desactivado.png " alt=" ">
+                            <img class="like-size like-active-1" style="position: absolute; " src="./data/Like-activado.png " alt=" " hidden>
+                        </a>
+                    </div>
+                    <div class="uk-width-1-3 uk-flex uk-flex-middle" style="padding-left: 10px;">
+                        <div>
+                            <h5 class="uk-text-bold uk-margin-remove ">LONDON SUEDE</h5>
+                            <h5 class="uk-margin-remove ">75.000$</h5>
+                        </div>
+                    </div>
+                    <div class="uk-width-1-3 uk-width-1-3 uk-flex uk-flex-middle ">
+                        <button class="uk-text-capitalize uk-text-bold uk-button uk-button-default buttom-add uk-box-shadow-large ">Agregar</button>
+                    </div>
+                </div>
+                <div class="uk-flex " style="margin-top: 5px; ">
+                    <div class="uk-width-1-3 " style="position: relative; ">
+                        <div style="position: relative; ">
+                            <div class="img-items-products-add" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                            <a href="#" uk-toggle="target: .like-active-2">
+                                <img class="like-size like-active-2" style="position: absolute; " src="./data/Like-desactivado.png " alt=" ">
+                                <img class="like-size like-active-2" style="position: absolute; " src="./data/Like-activado.png " alt=" " hidden>
+                            </a>
+                        </div>
+                        <h6 class="discount uk-text-center " style="position: absolute; ">25%</h6>
+                    </div>
+                    <div class="uk-width-1-3 uk-flex uk-flex-middle uk-flex-center" style="padding-left: 10px;">
+                        <div>
+                            <h5 class="uk-text-bold uk-margin-remove ">EDERA SPORT MONACO</h5>
+                            <h5 class="uk-margin-remove ">75.000$</h5>
+                        </div>
+                    </div>
+                    <div class="uk-width-1-3 uk-width-1-3 uk-flex uk-flex-middle ">
+                        <button class="uk-text-capitalize uk-text-bold uk-button uk-button-default buttom-add uk-box-shadow-large ">Agregar</button>
+                    </div>
+                </div>
+                <div class="uk-flex " style="margin-top: 5px; ">
+                    <div class="uk-width-1-3 " style="position: relative; ">
+                        <div style="position: relative; ">
+                            <div class="img-items-products-add" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                            <a href="#" uk-toggle="target: .like-active-3">
+                                <img class="like-size like-active-3" style="position: absolute; " src="./data/Like-desactivado.png " alt=" ">
+                                <img class="like-size like-active-3" style="position: absolute; " src="./data/Like-activado.png " alt=" " hidden>
+                            </a>
+                        </div>
+                        <h6 class="discount uk-text-center " style="position: absolute; ">50%</h6>
+                    </div>
+                    <div class="uk-width-1-3 uk-flex uk-flex-middle uk-flex-center" style="padding-left: 10px;">
+                        <div>
+                            <h5 class="uk-text-bold uk-margin-remove ">NAVY FERCA SPORT</h5>
+                            <h5 class="uk-margin-remove ">75.000$</h5>
+                        </div>
+                    </div>
+                    <div class="uk-width-1-3 uk-width-1-3 uk-flex uk-flex-middle ">
+                        <button class="uk-text-capitalize uk-text-bold uk-button uk-button-default buttom-add uk-box-shadow-large ">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Galeria -->
+        <div style="display: none;">
+            <!--Navbar gallery-->
+            <div class="uk-flex uk-flex around uk-flex-middle uk-box-shadow-medium">
+                <div class="uk-width-1-2 uk-flex uk-flex-center">
+                    <img src="./data/logo2.png" style="width: 140px; height: 70px;" alt="">
+                </div>
+                <div class="uk-width-1-2">
+                    <li class="uk-flex uk-flex-middle uk-flex uk-flex-center">
+                        <a href="# " style="text-decoration:none; ">
+                            <div class=" background-green-buy-galery uk-flex uk-flex-center">
+                                <div class="uk-flex uk-flex-middle ">
+                                    <h5 class="uk-margin-remove" style="padding-right: 10px;">0$</h5>
+                                    <div class="uk-flex uk-flex-middle ">
+                                        <div class="hr-vertical "></div>
+                                        <a style="position: relative; " href=" ">
+                                            <img class="img-size-buy-car" style="margin-left:10px ;" src="./data/Carrito-de-compras.png " alt=" " uk-img>
+                                            <h6 class="text-img-buy-galery" style="position: absolute; ">0</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </div>
+            </div>
+            <div class="background-grey-galery" style="position: relative;">
+                <div style="padding: 30px;">
+                    <div class="uk-flex uk-flex-middle">
+                        <i class="fas fa-caret-left uk-margin-remove cursor-pointer" style="font-size: 20px;"></i>
+                        <h4 class="uk-margin-remove padding-horizontal-20 uk-text-bold">AK116BIS</h4>
+                        <div class="uk-flex uk-flex-middle">
+                            <i class="fas fa-star uk-margin-remove color-yellow-star"></i>
+                            <i class="fas fa-star uk-margin-remove color-yellow-star padding-horizontal-5"></i>
+                            <i class="fas fa-star uk-margin-remove color-yellow-star"></i>
+                            <i class="fas fa-star uk-margin-remove color-yellow-star padding-horizontal-5"></i>
+                            <i class="fas fa-star uk-margin-remove color-yellow-star"></i>
+                        </div>
+                    </div>
+                    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow>
+                        <ul class="uk-slideshow-items" style="height: 350px; width: 360px;">
+                            <li>
+                                <img data-src="./data/img-galery.png" width="1150" height="1100" alt="" uk-cover uk-img="target: !.uk-slideshow-items">
+                            </li>
+                            <li>
+                                <img data-src="./data/img-galery.png" width="1150" height="1100" alt="" uk-cover uk-img="target: !.uk-slideshow-items">
+                            </li>
+                            <li>
+                                <img data-src="./data/img-galery.png" width="1150" height="1100" alt="" uk-cover uk-img="target: !.uk-slideshow-items">
+                            </li>
+                        </ul>
+                        <a class="uk-position-center-left uk-position-small uk-hidden-hover" style="color: black; background-color: rgba(255, 255, 255, 0.589);" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                        <a class="uk-position-center-right uk-position-small uk-hidden-hover" style="color: black; background-color: rgba(255, 255, 255, 0.589);" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+                    </div>
+                    <div style="position: absolute;">
+                        <div class="uk-flex uk-flex-middle">
+                            <div>
+                                <div class="img-items-galery cursor-pointer" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                                <h5 class="uk-margin-remove uk-text-bold uk-text-center">BLACK</h5>
+                            </div>
+                            <div>
+                                <div class="img-items-galery cursor-pointer" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                                <h5 class="uk-margin-remove uk-text-bold uk-text-center">BLUE</h5>
+                            </div>
+                            <div>
+                                <div class="img-items-galery cursor-pointer" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                                <h5 class="uk-margin-remove uk-text-bold uk-text-center">CUOIO</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 150px;">
+                        <div class="uk-flex uk-flex-around uk-flex-middle">
+                            <h5 class="uk-margin-remove uk-text-bold">Talla:</h5>
+                            <div class="button-galery-options">
+                                <h6 class="uk-margin-remove uk-text-center">6.5</h6>
+                            </div>
+                            <div class="button-galery-options">
+                                <h6 class="uk-margin-remove uk-text-center">7</h6>
+                            </div>
+                            <div class="button-galery-options">
+                                <h6 class="uk-margin-remove uk-text-center">7.5</h6>
+                            </div>
+                            <div class="button-galery-options">
+                                <h6 class="uk-margin-remove uk-text-center">8</h6>
+                            </div>
+                            <div class="button-galery-options">
+                                <h6 class="uk-margin-remove uk-text-center">9</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding-top: 30px;">
+                        <h3 class="uk-text-bold uk-margin-remove">150.000$</h3>
+                    </div>
+                    <div class="uk-flex uk-flex-middle uk-flex-around box-green cursor-pointer" style="margin-top: 30px;">
+                        <h5 class="uk-margin-remove uk-text-bold">Añadir</h5>
+                        <img class="size-shopping-cart uk-margin-remove" src="./data/Carrito-de-compras.png" alt="">
+                    </div>
+                    <div style="padding: 10px;">
+                        <ul class="uk-list uk-list-disc" style="padding-top: 20px;">
+                            <li class="uk-margin-remove font-size-18">75% Nubuck, 25% Malla</li>
+                            <li class="uk-margin-remove font-size-18">Importado</li>
+                            <li class="uk-margin-remove font-size-18">Suela de goma </li>
+                            <li class="uk-margin-remove font-size-18">El tacón mide aproximadamente 2’’</li>
+                            <li class="uk-margin-remove font-size-18">Tenis con cordones con parte superior de malla, cubierta de apoyo y cuello acolchado.</li>
+                            <li class="uk-margin-remove font-size-18">Langúeta de malla acolchada</li>
+                            <li class="uk-margin-remove font-size-18">Plantilla de espuma viscoelástica</li>
+                            <li class="uk-margin-remove font-size-18">Ojal superior de metal</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="uk-margin-remove">Productos relacionados</h4>
+                        <div class="uk-flex uk-flex-around">
+                            <div>
+                                <div class="img-items-galery-relation cursor-pointer" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                                <h4 class="uk-margin-remove uk-text-center">AK907</h4>
+                                <div class="uk-flex uk-flex-middle uk-flex-center padding-vertical-10">
+                                    <i class="fas fa-star uk-margin-remove color-yellow-star"></i>
+                                    <i class="fas fa-star uk-margin-remove color-yellow-star padding-horizontal-5"></i>
+                                    <i class="fas fa-star uk-margin-remove color-yellow-star"></i>
+                                    <i class="fas fa-star uk-margin-remove color-yellow-star padding-horizontal-5"></i>
+                                    <i class="fas fa-star uk-margin-remove color-yellow-star"></i>
+                                </div>
+                                <h5 class="uk-margin-remove uk-text-center uk-text-bold">180.000$</h5>
+                            </div>
+                            <div>
+                                <div>
+                                    <div class="img-items-galery-relation cursor-pointer" style="background-image: url(./data/shoes1.png); " uk-img></div>
+                                    <h4 class="uk-margin-remove uk-text-center">AK913</h4>
+                                    <div class="uk-flex uk-flex-middle uk-flex-center padding-vertical-10">
+                                        <i class="fas fa-star uk-margin-remove color-yellow-star"></i>
+                                        <i class="fas fa-star uk-margin-remove color-yellow-star padding-horizontal-5"></i>
+                                        <i class="fas fa-star uk-margin-remove color-yellow-star"></i>
+                                        <i class="fas fa-star uk-margin-remove color-yellow-star padding-horizontal-5"></i>
+                                        <i class="fas fa-star uk-margin-remove color-yellow-star"></i>
+                                    </div>
+                                    <h5 class="uk-margin-remove uk-text-center uk-text-bold">120.000$</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Complemento contenido para generacion de compra-->
+        <div style="display: none;">
+            <div class="uk-flex uk-flex-middle uk-box-shadow-medium uk-flex-between padding-horizontal-20 padding-vertical-10">
+                <i class="fas fa-search " style="color: black; font-size: 20px; padding-right: 10px ; "></i>
+                <form class="uk-search uk-search-medium">
+                    <input class="uk-search-input uk-text-light form-search " type="search " placeholder="Buscador de productos ">
+                </form>
+                <div>
+                    <button class=" uk-text-capitalize uk-text-bold uk-button uk-button-default buttom-search " style="margin-left: 15px;">Recargar</button>
+                </div>
+            </div>
+            <div class="uk-flex uk-flex-middle">
+                <div class="uk-width-1-2">
+                    <div class="button-select-search-option uk-box-shadow-hover-large uk-flex uk-flex-middle">
+                        <h4 class="uk-text-center uk-text-bold color-blue uk-margin-remove padding-horizontal-40">Productos por lista</h4>
+                    </div>
+                </div>
+                <div class="uk-width-1-2">
+                    <div class="button-select-search-option uk-box-shadow-hover-large uk-flex uk-flex-middle">
+                        <h4 class="uk-text-center uk-text-bold color-blue uk-margin-remove">Productos por categorias</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-flex uk-flex-middle">
+                <div class="button-select-search-cat uk-box-shadow-hover-large uk-flex uk-flex-middle uk-flex-center">
+                    <button onclick="openMenu('categories-basket')" class="uk-text-capitalize uk-text-bold uk-button uk-button-default buttom-search-cat">Zapatos</button>
+                </div>
+                <div class="button-select-search-cat uk-box-shadow-hover-large uk-flex uk-flex-middle uk-flex-center" style="width: 170px;">
+                    <div class="background-green-buy">
+                        <div class="uk-flex uk-flex-middle" style="padding-left: 20px; width: 100px;">
+                            <h5 class="uk-margin-remove" style="padding-right:20px ;">0$</h5>
+                            <div class="uk-flex uk-flex-middle" style="width: 100px !important;">
+                                <div class="hr-vertical" style="margin-right: 10px;"></div>
+                                <a style="position: relative; " href=" ">
+                                    <img class="img-size-1" src="./data/Carrito-de-compras.png " alt=" " uk-img>
+                                    <h6 class="text-img-buy" style="position: absolute; ">0</h6>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="menu-categories-basket" class="background-menus">
+                <div class="uk-margin-remove-right style-menu-categories">
+                    <ul class="uk-list">
+                        <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-10">Industrial</h5>
+                        <div class="hr-tab uk-margin-remove"></div>
+                        <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-10">Comidas</h5>
+                        <div class="hr-tab uk-margin-remove"></div>
+                        <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-10">Accesorios</h5>
+                        <div class="hr-tab uk-margin-remove"></div>
+                        <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-10">Bicicletas</h5>
+                        <div class="hr-tab uk-margin-remove"></div>
+                        <h5 class="uk-margin-remove uk-text-center uk-text-bold padding-vertical-10">Deportivo</h5>
+                    </ul>
+                </div>
+            </div>
+            <div class="padding-horizontal-20 padding-vertical-10">
+                <div class="uk-flex uk-flex-middle ">
+                    <div class="icon-close uk-flex uk-flex-middle uk-flex-center ">
+                        <i class="fas fa-times "></i>
+                    </div>
+                    <div class="padding-horizontal-20 ">
+                        <h1 class="uk-text-bold uk-margin-remove ">Tu Canasta</h1>
+                        <h4 class="uk-text-light uk-margin-remove ">Volver a tienda</h4>
+                    </div>
+                </div>
+                <div uk-grid>
+                    <div class="uk-width-1-2 " style="padding-top: 20px; ">
+                        <div style="position: relative; ">
+                            <div class="img-items-products-basket " style="background-image: url(./data/shoes1.png); " uk-img></div>
+                            <h6 class="discount-2 uk-flex uk-flex-middle uk-flex-center " style="position: absolute; ">-25%</h6>
+                        </div>
+                        <div style="padding-top: 20px; padding-left:10px; ">
+                            <div class="uk-flex uk-flex-middle uk-align-center ">
+                                <div class="icon-plus-minus uk-flex uk-flex-middle uk-flex-center " style="margin-right: 20px; ">
+                                    <i class="fas fa-plus "></i>
+                                </div>
+                                <h2 class="uk-text-bold uk-margin-remove ">1</h2>
+                                <div class="icon-plus-minus uk-flex uk-flex-middle uk-flex-center " style="margin-left: 20px; ">
+                                    <i class="fas fa-minus "></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-width-1-2 uk-margin-remove padding-horizontal-5 " style="padding-top: 30px; ">
+                        <h5 class="uk-margin-remove uk-text-bold ">EDERA SPORT MONACO</h5>
+                        <h5 class="uk-margin-remove uk-text-bold ">4500108 - 15</h5>
+                        <h6 class="uk-margin-remove " style="padding-top: 20px; ">Valor unitario: 75,000$</h6>
+                        <h6 class="uk-margin-remove ">Impuesto: 0%</h6>
+                        <div style="padding-top: 20px; ">
+                            <select class="form-select " style="width: 90% !important; ">
+                                <option class="select-items " value=" ">Bodega 1</option>
+                                <option class="select-items " value=" ">Opción 1</option>
+                            </select>
+                        </div>
+                        <h5 class="uk-margin-remove " style="padding-top: 20px; ">Total: 75,000$</h5>
+                    </div>
+                </div>
+                <div class="uk-margin-remove-top " uk-grid>
+                    <div class="uk-width-1-2 " style="padding-top: 20px; ">
+                        <div style="position: relative; ">
+                            <div class="img-items-products-basket " style="background-image: url(./data/shoes1.png); " uk-img></div>
+                            <h6 class="discount-2 uk-flex uk-flex-middle uk-flex-center " style="position: absolute; ">-25%</h6>
+                        </div>
+                        <div style="padding-top: 20px; padding-left:10px; ">
+                            <div class="uk-flex uk-flex-middle uk-align-center ">
+                                <div class="icon-plus-minus uk-flex uk-flex-middle uk-flex-center " style="margin-right: 20px; ">
+                                    <i class="fas fa-plus "></i>
+                                </div>
+                                <h2 class="uk-text-bold uk-margin-remove ">1</h2>
+                                <div class="icon-plus-minus uk-flex uk-flex-middle uk-flex-center " style="margin-left: 20px; ">
+                                    <i class="fas fa-minus "></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-width-1-2 uk-margin-remove padding-horizontal-5 " style="padding-top: 30px; ">
+                        <h5 class="uk-margin-remove uk-text-bold ">EDERA SPORT MONACO</h5>
+                        <h5 class="uk-margin-remove uk-text-bold ">4500108 - 15</h5>
+                        <h6 class="uk-margin-remove " style="padding-top: 20px; ">Valor unitario: 75,000$</h6>
+                        <h6 class="uk-margin-remove ">Impuesto: 0%</h6>
+                        <div style="padding-top: 20px; ">
+                            <select class="form-select " style="width: 90% !important; ">
+                                <option class="select-items " value=" ">Bodega 1</option>
+                                <option class="select-items " value=" ">Opción 1</option>
+                            </select>
+                        </div>
+                        <h5 class="uk-margin-remove " style="padding-top: 20px; ">Total: 75,000$</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="background-gray uk-margin-remove " style="padding-top: 20px; padding-left: 30px; ">
+                <div class="uk-flex ">
+                    <h5 class="uk-text-light uk-margin-remove font-size-17 ">Subtotal: 150.000$</h5>
+                    <h5 class="uk-text-light uk-margin-remove font-size-17 " style="padding-left: 30px; ">Impuesto: 0$</h5>
+                </div>
+                <div>
+                    <h2 class="uk-text-bold uk-margin-remove " style="padding-top: 10px; padding-bottom: 20px; ">Total: 150.000$</h2>
+                </div>
+            </div>
+            <div class="uk-margin-remove padding-horizontal-30 " style="padding: 20px; ">
+                <h4 class="uk-margin-remove uk-text-bold " style="padding-bottom:10px; color: grey; ">Seleccione el domiciliario</h4>
+                <select class="form-select " style="width: 100% !important; ">
+                     <option class="select-items " value=" ">Sin domiciliario</option>
+                     <option class="select-items " value=" ">Opción 1</option>
+                </select>
+            </div>
+            <div class="padding-horizontal-30 " style="padding-bottom: 30px; ">
+                <h4 class="uk-margin-remove uk-text-bold " style="padding-bottom: 20px; ">Operaciones de confirmación</h4>
+                <div class="uk-flex uk-flex-left " uk-grid>
+                    <div class="uk-width-2-5 " style="padding-right: 3%; ">
+                        <button class=" uk-button uk-margin-remove buttom-tel "><h6 class="uk-margin-remove uk-text-center font-size-18 uk-text-lighter ">Manual</h6></button>
+                    </div>
+                    <div class="uk-width-3-5 " style="padding: 0px; margin: 0px; ">
+                        <button class="uk-button uk-margin-remove buttom-tel "><h6 class="uk-margin-remove font-size-18 uk-text-lighter ">Rápida con factura</h6></button>
+                    </div>
+                </div>
+                <div style="padding-top: 10px; ">
+                    <button class="uk-button buttom-tel-basket "><h6 class=" uk-margin-remove font-size-18 uk-text-bold "> Rápida</h6></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
