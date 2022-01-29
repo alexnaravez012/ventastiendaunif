@@ -1285,15 +1285,18 @@
     background-color: #e9e9e9;
 }
 
-.buttom-tel {
-    border: 1px solid gray;
-    background-color: white;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    width: 100%;
+.button-tel {
+    border: 1px solid gray !important;
+    background-color: white !important;
+    padding-bottom: 10px !important;
+    padding-top: 10px !important;
+    width: 100% !important;
+    border-radius: 5px !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
 }
 
-.buttom-tel-basket {
+.button-tel-basket {
     background-color: #98FB98;
     padding-bottom: 10px;
     padding-top: 10px;
@@ -1731,4 +1734,12 @@
 .size-shopping-cart {
     height: 40px;
     width: 40px;
+}
+
+.width-250 {
+    width: 250px;
+}
+
+.height-60 {
+    height: 60px;
 }

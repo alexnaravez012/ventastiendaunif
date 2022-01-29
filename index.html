@@ -1523,6 +1523,12 @@
                                 <li class="item-list uk-margin-remove ">Agua con gas - 4500108 - 15</li>
                                 <div class="hr-tab uk-margin-remove "></div>
                                 <li class="item-list uk-margin-remove ">Agua grande - 4500107 - 7</li>
+                                <div class="hr-tab uk-margin-remove "></div>
+                                <li class="item-list uk-margin-remove ">Aguila light - 4500128 - 25</li>
+                                <div class="hr-tab uk-margin-remove "></div>
+                                <li class="item-list uk-margin-remove ">Agua con gas - 4500108 - 15</li>
+                                <div class="hr-tab uk-margin-remove "></div>
+                                <li class="item-list uk-margin-remove ">Agua grande - 4500107 - 7</li>
                             </ul>
                         </div>
                     </div>
@@ -1535,7 +1541,9 @@
                     <div>
                         <div class="uk-flex uk-flex-between " style="margin-top: 15px; padding-left: 20px; ">
                             <div class="uk-text-middle uk-text-left ">
-                                <h6 class="uk-text-bold uk-margin-remove font-size-17 ">Agua con gas - 4500108 - 15</h6>
+                                <div class="width-250 height-60">
+                                    <h6 class="uk-text-bold uk-margin-remove font-size-17">Agua con gas - 4500108</h6>
+                                </div>
                                 <div uk-form-custom="target:> * > span:first-child" class="uk-margin-remove" style="padding-top: 10px">
                                     <select>
                                         <option value=" ">Bodega 1</option>
@@ -1547,9 +1555,13 @@
                                     </button>
                                 </div>
                             </div>
-                            <div class="uk-flex-middle uk-text-center " style="padding-right: 40px; ">
-                                <h3 class="uk-text-bold uk-margin-remove " style="color: #19bb21 ">- 1 +</h3>
-                                <h5 class="uk-text-lighter uk-margin-remove font-size-18 ">Quitar</h5>
+                            <div>
+                                <div class="uk-flex uk-flex-middle" style="padding-right: 40px; ">
+                                    <i class="fas fa-minus" style="color: #19bb21 "></i>
+                                    <h3 class="uk-text-bold uk-margin-remove padding-horizontal-10" style="color: #19bb21 ">1</h3>
+                                    <i class="fas fa-plus" style="color: #19bb21 "></i>
+                                </div>
+                                <h5 class="uk-text-lighter uk-margin-remove font-size-18" style="padding-left: 8px;">Quitar</h5>
                             </div>
                         </div>
                         <div class="uk-flex uk-flex-between " style="padding: 20px; ">
@@ -1577,22 +1589,30 @@
                             <h4 class="uk-margin-remove uk-text-bold " style="padding-bottom: 20px; ">Operaciones de confirmación</h4>
                             <div class="uk-flex uk-flex-left " uk-grid>
                                 <div class="uk-width-2-5 " style="padding-right: 3%; ">
-                                    <button class=" uk-button uk-margin-remove buttom-tel "><h6 class="uk-margin-remove uk-text-center font-size-18 uk-text-lighter">Manual</h6></button>
+                                    <button class="uk-margin-remove button-tel" style="color: #19bb21;">Manual</button>
                                 </div>
                                 <div class="uk-width-3-5 " style="padding: 0px; margin: 0px; ">
-                                    <button class="uk-button uk-margin-remove buttom-tel "><h6 class="uk-margin-remove font-size-18 uk-text-lighter">Rápida con factura</h6></button>
+                                    <button class="uk-margin-remove button-tel" style="color: #34B351;">Rápida con factura</button>
                                 </div>
                             </div>
                             <div style="padding-top: 10px; ">
-                                <button class="uk-button buttom-tel "><h6 class="color-green uk-margin-remove font-size-18 uk-text-bold"> Rápida</h6></button>
+                                <button class="button-tel" style="color: #34B38C;">Rápida</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div>
                     <div class="uk-flex uk-flex-middle">
-                        <div class="button-select-search-cat uk-box-shadow-hover-large uk-flex uk-flex-middle uk-flex-center">
-                            <button onclick="openMenu('categories')" class="uk-text-capitalize uk-text-bold uk-button uk-button-default buttom-search-cat">Zapatos</button>
+                        <div class="button-select-search-cat-tables-responsive uk-box-shadow-hover-large uk-flex uk-flex-middle uk-flex-center">
+                            <div uk-form-custom="target: > * > span:first-child">
+                                <select (change)="setCategory()" [(ngModel)]="selectedCategory">
+                                    <option value=-1>TODAS</option>
+                                    <option [value]="item.id_category" *ngFor="let item of categories"> {{item.category}} </option>
+                                </select>
+                                <button class="uk-button uk-button-default button-select-cat" type="button" tabindex="-1">
+                                    <span></span>
+                                </button>
+                            </div>
                         </div>
                         <div class="button-select-search-cat uk-box-shadow-hover-large uk-flex uk-flex-middle uk-flex-center" style="width: 170px;">
                             <div class="background-green-buy">
