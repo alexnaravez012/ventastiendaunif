@@ -1391,6 +1391,10 @@
     border-radius: 10px;
     color: rgb(15, 121, 15);
     margin-left: 10px;
+    width: 100px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid grey;
 }
 
 .like-size {
@@ -1742,4 +1746,36 @@
 
 .height-60 {
     height: 60px;
+}
+
+.button-select-cat {
+    border-radius: 20px;
+    background-color: #98FB98;
+    color: black;
+    font-size: 13PX;
+    font-weight: 600;
+    height: 40PX;
+}
+
+.button-select-search-cat-tables-responsive {
+    width: 250px;
+    height: 80px;
+}
+
+.background-green-buy-tables-responsive {
+    background-color: #98FB98;
+    border-radius: 5px;
+    width: 135px;
+    padding-left: 5px;
+}
+
+.bag-buy-box-green-tables-responsive {
+    width: 57px;
+    height: 45px;
+}
+
+.text-img-buy-tables-responsive {
+    color: black;
+    left: 15px;
+    bottom: -10px;
 }
